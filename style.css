@@ -1,0 +1,333 @@
+body {
+    position: relative;
+    margin: 0;
+    background-color: #333;
+    color: #ebebeb;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    padding: 1em;
+    height: auto;
+    background-color: #283959;
+    background-image: linear-gradient(to bottom, #283959, #333);
+    display: grid;
+    grid-template-rows: 6em;
+    grid-template-columns: 85% 15%;
+    align-items: center;
+    z-index: 1000;
+}
+
+a {
+    color: #ebebeb;
+    text-decoration: none;
+}
+
+#logo {
+    grid-row: 1;
+    grid-column: 1 / span 1;
+    width: 10em;
+    height: auto;
+}
+
+#menu-icon {
+    color: #ebebeb;
+    font-size: 3em;
+    grid-row: 1;
+    grid-column: 2 / span 1;
+    justify-self: start;
+}
+
+#menu-icon:hover {
+    transition: all 180ms ease-out;
+    background-color: #374f7b;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+#menu-toggle:checked~#menu-list {
+    display: block;
+}
+
+#menu-list {
+    padding: 0;
+    text-align: center;
+    grid-row: 2;
+    grid-column: 1 / span 2;
+    display: none;
+    list-style-type: none;
+    font-size: 1.2em;
+    background-color: #5163aa;
+}
+
+#menu-list li {
+    padding: 0.4em;
+}
+
+#menu-list li:hover {
+    transition: all 180ms ease-out;
+    background-color: #5a76af;
+}
+
+.grid-container-layout {
+    padding: 0.5em;
+}
+
+.main {
+    padding: 0 0.5em
+}
+
+.main img {
+    width: 100%;
+    height: auto;
+}
+
+.content-rubrik {
+    text-align: center;
+}
+
+#tecknat-hus-bild {
+    width: 25%;
+    height: auto;
+    float: inline-end;
+    margin: 0 0.5em;
+}
+
+#hållbarhet-bild {
+    width: 25%;
+    height: auto;
+    float: inline-start;
+    margin: 0 0.5em;
+}
+
+.anställda {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.anst-grid-it {
+    padding: 0.5em;
+    line-break: anywhere;
+    width: 44%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: #283959;
+    background-image: radial-gradient(#283959, #394157, #333);
+    border-radius: 2em 0 2em 0;
+    margin: 0.1em;
+    box-shadow: 0 0 0.9em #222;
+}
+
+.anst-grid-it:hover {
+    background-image: radial-gradient(#283959, #454a59, #333);
+}
+
+.anst-grid:hover {
+    transition: all 180ms ease-out;
+    box-shadow: 0 0 0.9em #495F8C;
+}
+
+.anst-bild {
+    border-radius: 50%;
+}
+
+
+.anst-namn {
+    margin-top: 0.5em;
+}
+.länk-anställd{
+    margin: 0;
+    padding: 0;
+}
+/*------------------------KONTAKT.HTML-----------------------------*/
+
+.formulär {
+    width: 18em;
+    justify-self: center;
+    justify-items: center;
+}
+
+.formulär label,
+input,
+textarea {
+    width: 100%;
+}
+
+.formulär label,
+input,
+textarea,
+button {
+    font-size: 1.2em;
+}
+
+.formulär label {
+    display: block;
+    margin: 0.5em;
+}
+
+.formulär input,
+textarea {
+    padding: 0.5em;
+    transform: translateX(-0.5em);
+    /*För att med padding så blev elementet
+    1em större till höger, så det gick ej att centrera, så för att kompensera
+    så gjordes centrum av element till 0.5em till vänster av faktiska centrum*/
+    border-radius: 1em;
+    border: none;
+}
+
+.formulär textarea {
+    resize: vertical;
+    min-height: 20px;
+}
+
+.formulär button {
+    margin-top: 1em;
+    padding: 0.5em;
+    border-radius: 1em;
+    border: none;
+    display: block;
+    font-size: 1.3em;
+    background-color: #495F8C;
+    color: #ebebeb;
+}
+
+.formulär button:hover {
+    background-color: #5a76af;
+}
+
+#kont-rbr-stor-viewport {
+    display: none;
+}
+
+#kont-rbr {
+    display: block;
+}
+
+/*-------------------------FOOTER--------------------------*/
+
+.footer {
+    line-height: 1.1em;
+    padding: 0 1em 0.8em 1em;
+    margin-top: 2em;
+    background-image: linear-gradient(to top, #283959, #333);
+    display: block;
+}
+
+.foot-uppgifter {
+    display: block;
+}
+
+.footer .fa {
+    font-size: 1.5em;
+    padding-right: 1em;
+}
+
+/* ------------------responsive design------------------ */
+@media only screen and (min-width: 800px) {
+    .main {
+        padding: 0 15%;
+    }
+
+    header {
+        padding: 0em;
+        display: block;
+        text-align: center;
+        grid-template-columns: 1fr;
+    }
+
+    #logo {
+        width: 12em;
+        margin: 1em 0;
+        grid-column: 1 / span 2;
+    }
+
+    #menu-icon {
+        display: none;
+    }
+
+    #menu-list {
+        margin: 1em 0;
+        display: block;
+        width: 100%;
+        grid-row: 2;
+        background-image: linear-gradient(to right, #333333e1, #28395971, #28395986, #333333e1);
+    }
+
+    #menu-list li {
+        display: inline;
+        margin: 0 0.5em;
+        background-color: #5163aa;
+        border-radius: 0.5em;
+    }
+
+    #tecknat-hus-bild {
+        width: 15%;
+        float: inline-end;
+    }
+
+    #hållbarhet-bild {
+        width: 15%;
+        float: inline-end;
+    }
+
+    .form-container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-items: center;
+        justify-content: space-between;
+    } 
+
+    .form-item {
+        width: 45%;
+    }
+
+    .form-bild {}
+
+    .formulär {}
+
+    #kont-rbr {
+        display: none;
+    }
+
+    #kont-rbr-stor-viewport {
+        display: block;
+    }
+
+    .footer{
+        padding: 0 15%;
+        display: grid;
+        grid-template-columns: 1fr, 1fr;
+    }
+    .foot-uppgifter{
+        grid-column: 1;
+    }
+    .socials{
+        grid-column: 2;
+    }
+    .soc-icons{
+        display: flex;
+        flex-direction: row;
+    }
+    .socials a, #rbr-h4{
+        display: block;
+    }
+    .anst-grid-it {
+        width: 22%;
+    }
+
+    .soc-rbr-container {
+        text-align: center;
+    }
+
+}
