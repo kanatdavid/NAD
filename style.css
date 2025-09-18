@@ -185,7 +185,7 @@ textarea {
 
 .formulär textarea {
     resize: vertical;
-    min-height: 20px;
+    min-height: 2em;
 }
 
 .formulär button {
@@ -209,6 +209,11 @@ textarea {
 
 #kont-rbr {
     display: block;
+}
+
+.felmeddelande-container{
+    width: 100%;
+    color: #ff0000;
 }
 
 /*-------------------------FOOTER--------------------------*/
