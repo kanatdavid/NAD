@@ -225,6 +225,7 @@ input.invalid:focus {
   outline: none;
 }  */
 
+/* Samma resutlat som ovan: */
 input:focus.valid {
   border: 0.2em solid limegreen;
   outline: none;
