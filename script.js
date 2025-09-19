@@ -2,13 +2,15 @@ const skickaKnapp = document.getElementById('skickaKnapp')
 const namnInput = document.getElementById ('namnInput')
 const namnHint = document.getElementById('namnHint')
 let giltigtNamn = false
-
+/* Skicka knapp är disabled så länge alla 3 inte är uppfyllda*/
 const uppdateraForm = () => {
     skickaKnapp.disabled = !(giltigtNamn && giltigTelefon && giltigEpost)
 }
 
 namnInput.addEventListener('input', (event) => {
     const value = event.target.value.trim()
+    /*Deklarerar ett regEx med det inbyggda stödet. Mönstret används för att testa inmatning. 
+    Om mönstret passerar testet så returneras true */
     const regExMönster = /^[A-Za-zÅÄÖåäö\s]{2,}$/
     giltigtNamn = regExMönster.test(value);
 

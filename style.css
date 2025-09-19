@@ -207,7 +207,7 @@ textarea {
 
 /* Validering */
 
-.valid {
+/* .valid {
     border: 0.2em solid limegreen;
 }
 
@@ -223,7 +223,17 @@ input.valid:focus {
 input.invalid:focus {
   border: 0.2em solid red;
   outline: none;
-} 
+}  */
+
+input:focus.valid {
+  border: 0.2em solid limegreen;
+  outline: none;
+}
+
+input:focus.invalid {
+  border: 0.2em solid red;
+  outline: none;
+}
 
 #skickaKnapp:disabled{
     background-color: #495F8C;
@@ -352,7 +362,7 @@ input.invalid:focus {
     .footer{
         padding: 0 15%;
         display: grid;
-        grid-template-columns: 1fr, 1fr;
+        grid-template-columns: 1fr 1fr;
     }
     .foot-uppgifter{
         grid-column: 1;
