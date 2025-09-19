@@ -180,7 +180,6 @@ textarea {
     1em större till höger, så det gick ej att centrera, så för att kompensera
     så gjordes centrum av element till 0.5em till vänster av faktiska centrum*/
     border-radius: 1em;
-    border: none;
 }
 
 .formulär textarea {
@@ -211,10 +210,19 @@ textarea {
     display: block;
 }
 
-.felmeddelande-container{
+.hint-container{
     width: 100%;
-    color: #ff0000;
+    color: #ffc800;
 }
+.fb-style-input-fel{
+    border: 0.2em solid red;
+}
+
+.fb-style-label-fel {
+    /* position: absolute; */
+    color: red;
+}
+
 
 /*-------------------------FOOTER--------------------------*/
 

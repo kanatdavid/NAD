@@ -35,19 +35,19 @@
                 <div class="form-item formulär">
                     <h2 id="kont-rbr-stor-viewport" class="content-rubrik2">Kontakta oss</h2>
 
-                    <label>Namn</label>
-                    <input id="form-namn" type="text" placeholder="Ex: Jonas Jonasson">
-                    <label>Telefon</label>
-                    <input id="form-telefon" type="text" placeholder="Ex: 0708123456">
-                    <label>E-post</label>
-                    <input id="form-epost" type="text" placeholder="Ex: jonasjonasson@example.com">
-                    <label>Meddelande</label>
-                    <textarea placeholder="Hej! Vi ska renovera..."></textarea>
+                    <label for="form-namn">Namn<span id="fb-namn"></span></label>
+                    <input id="form-namn" type="text" placeholder="Ex: Jonas Jonasson" required>
+                    <label for="form-telefon">Telefon<span id="fb-tel"></span></label>
+                    <input id="form-telefon" type="text" placeholder="Ex: 0708123456" required>
+                    <label for="form-epost">E-post<span id="fb-epost"></span></label>
+                    <input id="form-epost" type="text" placeholder="Ex: jonasjonasson@example.com" required>
+                    <label for="form-meddelande">Meddelande</label>
+                    <textarea id="form-meddelande" placeholder="Hej! Vi ska renovera..."></textarea>
                     <button type="button">Skicka</button>
                 </div>
             </div>
-            <div class="felmeddelande-container">
-                <p id="felmeddelande"></p>
+            <div class="hint-container">
+                <p id="hint"></p>
             </div>
         </div>
         <!--/Main-->
