@@ -35,15 +35,18 @@
                 <div class="form-item formulär">
                     <h2 id="kont-rbr-stor-viewport" class="content-rubrik2">Kontakta oss</h2>
                     <!--Lagt till for, id och hint-->
-                    <label for="namnInput">Namn</label>
+                    <label for="namnInput">Namn<span id="namnHint" class="hint"></span></label>
                     <input id="namnInput" type="text" placeholder="Ex: Jonas Jonasson">
-                    <small id="namnHint" class="hint hidden">Minst 2 bokstäver</small>
-                    <label for="telefonInput">Telefon</label>
+                    <!-- <small id="namnHint" class="hint hidden">Minst 2 bokstäver</small> -->
+
+                    <label for="telefonInput">Telefon<span id="telefonHint" class="hint"></span></label>
                     <input id="telefonInput" type="text" placeholder="Ex: 0708123456">
-                    <small id="telefonHint" class="hint hidden">Minst 7 siffror</small>
-                    <label for="epostInput">E-post</label>
+                    <!-- <small id="telefonHint" class="hint hidden">Minst 7 siffror</small> -->
+
+                    <label for="epostInput">E-post<span id="epostHint" class="hint"></span></label>
                     <input id="epostInput" type="text" placeholder="Ex: jonasjonasson@example.com">
-                    <small id="epostHint" class="hint hidden">Fyll i fullständig E-postadress</small>
+                    <!-- <small id="epostHint" class="hint hidden">Fyll i fullständig E-postadress</small> -->
+
                     <label for="meddelandeTextArea">Meddelande</label>
                     <textarea id="meddelandeTextArea" placeholder="Hej! Vi ska renovera..."></textarea>
                     <!--Knapp ej klickbar från början-->

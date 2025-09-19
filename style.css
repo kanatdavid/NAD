@@ -207,25 +207,6 @@ textarea {
 
 /* Validering */
 
-/* .valid {
-    border: 0.2em solid limegreen;
-}
-
-.invalid {
-    border: 0.2em solid red;
-}
-
-input.valid:focus {
-  border: 0.2em solid limegreen;
-  outline: none; 
-}
-
-input.invalid:focus {
-  border: 0.2em solid red;
-  outline: none;
-}  */
-
-/* Samma resutlat som ovan: */
 input:focus.valid {
   border: 0.2em solid limegreen;
   outline: none;
@@ -250,14 +231,16 @@ input:focus.invalid {
 }
 
 .hint {
-    display: block;
+    position: absolute;
     font-size: 0.8em;
-    color: #aaa;
+    color: #ff0000;
     margin: 0.2em 0 0.5em 0.5em;
 }
 .hidden {
     display: none;
+    font-weight: 300;
 }
+
 /* <- Validering*/
 #kont-rbr-stor-viewport {
     display: none;
