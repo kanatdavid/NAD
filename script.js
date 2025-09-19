@@ -65,6 +65,7 @@ epostInp.addEventListener('input', (event) => {
         felMedEpost.classList.remove('fb-style-label-fel')
         epostInp.classList.remove('fb-style-input-fel')
         felMedEpost.textContent = ''
+        hint.textContent = ''
     }else{
         felMedEpost.classList.add('fb-style-label-fel')
         epostInp.classList.add('fb-style-input-fel')
