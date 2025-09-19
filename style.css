@@ -138,14 +138,19 @@ a {
     border-radius: 50%;
 }
 
-
 .anst-namn {
     margin-top: 0.5em;
 }
+
+.anst-namn:hover{
+    text-decoration: underline;
+}
+
 .länk-anställd{
     margin: 0;
     padding: 0;
 }
+
 /*------------------------KONTAKT.HTML-----------------------------*/
 
 .formulär {
@@ -331,10 +336,6 @@ input:focus.invalid {
         width: 45%;
     }
 
-    .form-bild {}
-
-    .formulär {}
-
     #kont-rbr {
         display: none;
     }
@@ -348,19 +349,24 @@ input:focus.invalid {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
+
     .foot-uppgifter{
         grid-column: 1;
     }
+
     .socials{
         grid-column: 2;
     }
+
     .soc-icons{
         display: flex;
         flex-direction: row;
     }
+
     .socials a, #rbr-h4{
         display: block;
     }
+
     .anst-grid-it {
         width: 22%;
     }
