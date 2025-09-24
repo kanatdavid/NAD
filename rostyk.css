@@ -1,0 +1,110 @@
+/* design för mindre skärmar */
+/* header och dess utseende följer med från st<rtsidan, 
+men jag vill ändå ha egen liten navigation bar*/
+
+.underHeader{
+    width: 22em;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.uH{
+    text-align: center;
+    gap: 1em;
+}
+.i1{
+    grid-column: 1;
+}
+.i2{
+    grid-column: 2;
+}
+.i3{
+    grid-column: 3;
+}
+.uH:hover{
+    text-decoration: underline;
+    background-color: #374f7b;
+}
+/* header slut */
+/* main */
+.rubrik{
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.huvudBild{
+    width: 22rem;
+    height: 22rem;
+    background-image: url(rostyk.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.minRoll{
+    margin: 1em 2em;
+    line-height: 1.5;
+}
+/* animerade skillbars */
+.kompetenser{
+    text-align: center;
+}
+.skillbar-backg{
+    background-color: darkgrey;
+    width: 80%;
+    margin: 0 10%;
+    border-radius: 5px;
+}
+.skillbar-fil{
+    background-color: #283959;
+    text-align: center;
+    border-radius: 5px;
+    width:0%;
+    animation: fill-bar 2s ease-out forwards;
+}
+.fil1{
+   animation-delay: 0.2s; --target-width: 85%;
+}
+.fil2{
+    animation-delay: 0.4s; --target-width: 95%;
+}
+.fil3{
+    animation-delay: 0.6s; --target-width: 79%;
+}
+.fil4{
+    animation-delay: 0.8s; --target-width: 60%;
+}
+/* med keyframes kan du ange hur en egenskap ska 
+ändras från början till slut */
+@keyframes fill-bar{
+    to{
+        width: var(--target-width);/*animationen är färdig när den uppnåt target-width*/
+    }
+}
+/* mina projekt */
+.projektGalleri{
+    width:22em;
+    height:22em;
+    margin: 0 auto;
+    background-color: red;
+}
+.ettProjekt{
+    width: 21em;
+    height: 21em;
+    margin: auto;
+    background-color: blue;
+}
+.ettProjektBild{
+    width: 80%;
+    height: 60%;
+    margin: auto;
+    background-color: green;
+}
+.ettProjektText{
+    width: 80%;
+    height: 30%;
+    margin: auto;
+    background-color:yellow;
+}
