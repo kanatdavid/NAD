@@ -30,10 +30,10 @@
                 <a href="#kompetenser">Kompetenser</a>
             </div>
             <div class="uH i3">
-                <a href="minaProjekt">Mina projekt</a>
+                <a href="#minaProjekt">Mina projekt</a>
             </div>
         </div>
-        
+
     </header>
     <main>
 
@@ -45,19 +45,27 @@
         <div class="omMIg" id="omMig">
             <div class="huvudBild"></div>
             <div class="minRoll">
-                <p>Som <strong>Chefsarkitekt</strong> på <em>Nordic Architect Design</em> leder jag det kreativa arbetet och driver byråns vision om
-                att skapa arkitektur som förenar funktion, estetik och hållbarhet. Med många års erfarenhet av både
-                bostadsprojekt, kontorsmiljöer, skolor och offentliga rum, har jag utvecklat en förmåga att se helheten
-                – från första skiss till färdig byggnad.<br><br>
-                Min roll innebär att jag ansvarar för de övergripande gestaltningsprinciperna, kvalitetssäkrar
-                designbeslut och leder våra team av arkitekter och specialister. Jag arbetar nära kunderna för att tolka
-                deras behov och omvandla dem till arkitektoniska lösningar som både inspirerar och fungerar i vardagen.<br><br>
-                Jag brinner särskilt för projekt där hållbarhet, innovation och mänskliga möten står i centrum – oavsett
-                om det handlar om en stadspark, ett vårdcentrum eller en bostadsbyggnad.<br><br> För mig är arkitektur inte bara
-                byggnader, utan miljöer som formar hur vi lever, arbetar och samspelar.
-                På <em>Nordic Architect Design</em> ser jag det som min uppgift att driva utvecklingen framåt, stärka företagets
-                arkitektoniska identitet och säkerställa att varje projekt lämnar ett bestående värde – både för våra
-                kunder och för samhället.</p>
+                <p>Som <strong>Chefsarkitekt</strong> på <em>Nordic Architect Design</em> leder jag det kreativa arbetet
+                    och driver byråns vision om
+                    att skapa arkitektur som förenar funktion, estetik och hållbarhet. Med många års erfarenhet av både
+                    bostadsprojekt, kontorsmiljöer, skolor och offentliga rum, har jag utvecklat en förmåga att se
+                    helheten
+                    – från första skiss till färdig byggnad.<br><br>
+                    Min roll innebär att jag ansvarar för de övergripande gestaltningsprinciperna, kvalitetssäkrar
+                    designbeslut och leder våra team av arkitekter och specialister. Jag arbetar nära kunderna för att
+                    tolka
+                    deras behov och omvandla dem till arkitektoniska lösningar som både inspirerar och fungerar i
+                    vardagen.<br><br>
+                    Jag brinner särskilt för projekt där hållbarhet, innovation och mänskliga möten står i centrum –
+                    oavsett
+                    om det handlar om en stadspark, ett vårdcentrum eller en bostadsbyggnad.<br><br> För mig är
+                    arkitektur inte bara
+                    byggnader, utan miljöer som formar hur vi lever, arbetar och samspelar.
+                    På <em>Nordic Architect Design</em> ser jag det som min uppgift att driva utvecklingen framåt,
+                    stärka företagets
+                    arkitektoniska identitet och säkerställa att varje projekt lämnar ett bestående värde – både för
+                    våra
+                    kunder och för samhället.</p>
             </div>
         </div>
 
@@ -99,11 +107,32 @@
             </div>
         </div>
 
-        <div class="projektGalleri">
-            <div class="ettProjekt">
-                <div class="ettProjektBild">    </div>
-                <div class="ettProjektText">    </div>
+        <div id="proj" class="projektGalleri">
+            <h1 id="minaProjekt">Mina projekt</h1>
+
+            <label class="labelText" for="filter">Sortera efter:</label>
+            <select class="labelText" v-model="filter" id="filter">
+                <option value="">Visa alla projekt</option>
+                <option value="skola">Visa läromiljöer</option>
+                <option value="bostäder">Visa bostäder</option>
+                <option value="kontor">Visa kontor</option>
+                <option value="trädgård">Visa trädgård</option>
+            </select>
+
+            <!-- lista med filtrerade projekt -->
+            <div v-for="projekt in filtreradeProjekt" class="ettProjekt">
+                <!-- <div v-for="bild in projekt.bilder" class="ettProjektBild">
+                        <img v-bind:src='"rostyksBilder/"+bild' alt="förstaBild">
+                    </div> -->
+                <div class="ettProjektBild" @click.prevent="väljProjekt(projekt.id)">
+                    <img v-bind:src='"rostyksBilder/"+projekt.huvudBild' class="projektBilder" alt="förstaBild">
+                </div>
+                <div class="ettProjektText">
+                    <p>{{projekt.titel}}</p>
+                    <p>{{projekt.kund}}</p>
+                </div>
             </div>
+
         </div>
 
     </main>

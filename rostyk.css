@@ -11,6 +11,7 @@ men jag vill ändå ha egen liten navigation bar*/
 .uH{
     text-align: center;
     gap: 1em;
+    text-decoration:underline;
 }
 .i1{
     grid-column: 1;
@@ -86,25 +87,118 @@ men jag vill ändå ha egen liten navigation bar*/
 /* mina projekt */
 .projektGalleri{
     width:22em;
-    height:22em;
-    margin: 0 auto;
-    background-color: red;
+    height:auto;
+    margin: 1em auto;
+    padding: 1em 0;
+    text-align: center;
+
+}
+.labelText{
+    margin-bottom: 1em;
+    padding-right: 0.7em;
+}
+#filter{
+    background-color: #333;
+    color: white;
+    
 }
 .ettProjekt{
-    width: 21em;
-    height: 21em;
-    margin: auto;
-    background-color: blue;
+    width: 20em;
+    height: auto;
+    margin: 1em auto;
+    padding: 1em 0;
+    border: 3px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    background-image: linear-gradient(to top, #212020, #333);
+    
 }
 .ettProjektBild{
-    width: 80%;
-    height: 60%;
+    width: 95%;
+    height: auto;
     margin: auto;
-    background-color: green;
 }
 .ettProjektText{
     width: 80%;
-    height: 30%;
+    height: auto;
     margin: auto;
-    background-color:yellow;
+    color: white;
 }
+.projektBilder{
+    width:95%;
+    height:auto;
+}
+.projektBilder:hover{
+    width: 100%;
+    height: auto;
+}
+/* style för rostyksProjekt */
+.baraBilder{
+    width: 22rem;
+    height: auto;
+    margin: 0 auto;
+    align-items: center;
+}
+.aktivBild{
+    width: 22rem;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-items: flex-start;
+    position: relative;
+    margin-bottom: 1em;
+}
+.aktivBild img{
+    width: 98%;
+    height: auto;
+    border: 0.19em solid rgba(0, 0, 0, 0.5);
+}
+.bildGalleri{
+    width: 5em;
+    height: auto;
+    display: flex;
+    gap:0.5em;
+    
+}
+.bildGalleri img{
+    width:100%;
+    height: auto;
+    border: 1.5px solid rgba(0, 0, 0, 0.5);
+}
+.miniBild:hover{
+    background-color: rgba(241, 235, 235, 1);
+    cursor: pointer;
+}
+.alltext{
+    text-align: center;
+}
+.titel{
+    font-size: 2em;
+}
+.rbr{
+    font-weight: bold;
+}
+i{
+    color: white;
+    font-size: 2em;
+}
+.fa-arrow-left{
+    position: absolute;
+    left: 0px;
+    top:50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.fa-arrow-right{
+    position: absolute;
+    right: 0px;
+    top:50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.fa-solid:hover{
+    color:#333;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius:0.1em;
+}
+
