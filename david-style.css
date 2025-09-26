@@ -13,7 +13,7 @@ body {
 
 header {
     padding: 1rem;
-    background-color: #6862b6;
+    /* background-color: #6862b6; */
     position: sticky;
     top: 0;
     display: grid;
