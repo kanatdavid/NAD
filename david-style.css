@@ -1,12 +1,15 @@
 body {
     margin: 0;
-    background-color: #222;
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
     color: #ebebeb;
+    height: 100%;
+    background-image: radial-gradient(#6862b6, #2b294d, #111);
 }
 
-
+.blue-gradient{
+    background-image: linear-gradient(to right,#2b294d, #6862b6, #2b294d);
+}
 
 header {
     padding: 1rem;
@@ -70,7 +73,7 @@ header {
     display: block;
 }
 
-.main {
+main {
     margin: 1rem;
 }
 
@@ -113,14 +116,14 @@ p {
     height: auto;
 }
 
-.consult-name-title {
-    background-color: #6862b6;
+#consult-name-title {
+    /* background-color: #6862b6; */
     border-radius: 0 0 100rem 100rem;
     padding: 0.5rem 0;
     margin-bottom: 1rem;
 }
 
-.consult-name-title p {
+#consult-name-title p {
     margin: 0;
 }
 
@@ -179,19 +182,16 @@ p {
 }
 
 @keyframes fillSkill {
-    0%{
-        width: 0;
-        background-color: #ebebeb;
-    }
+    0%{width: 0;background-color: #ebebeb;}
     100%{width: var(--targetWidth);}
 }
 
-.slidecount {
+#slidecount {
     box-sizing: border-box;
     width: 100%;
     padding: 1rem;
     text-align: center;
-    background-color: #6862b6;
+    /* background-color: #6862b6; */
 }
 
 .slideshow {
@@ -289,7 +289,8 @@ p {
         left: 0;
         transform: translateY(100%);
         /*Positiv är nedåt*/
-        background-color: #6809538d;
+        /* background-color: #6809538d; */
+        background-image: linear-gradient(to right,#68095335, #680953, #68095335);
         display: block;
     }
 
@@ -298,7 +299,7 @@ p {
         border-radius: 0.5rem;
     }
 
-    .main {
+    main {
         margin: 0 6%;
         display: flex;
         flex-direction: row;
@@ -309,7 +310,7 @@ p {
         flex: 1;
     }
 
-    .consult-name-title {
+    #consult-name-title {
         border-radius: 0 0 1rem 1rem;
     }
 
@@ -346,7 +347,7 @@ p {
         margin-left: 1rem;
     }
 
-    .slidecount {
+    #slidecount {
         padding: 0.25rem;
     }
 }

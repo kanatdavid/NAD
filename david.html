@@ -20,7 +20,7 @@
 -->
 
 <body>
-    <header>
+    <header class="effect">
         <a href="index.html"><img id="logo" src="NAD_white_transparent.png" alt="NAD Logo"></a>
         <input type="checkbox" id="menu-toggle">
         <label for="menu-toggle" id="menu-icon">&#9776;</label>
@@ -32,7 +32,7 @@
     </header>
 
     <div id="app">
-        <div class="main">
+        <main>
             <div class="main-item presentation"><!---->
 
 
@@ -44,7 +44,7 @@
                     <div class="consultant-image">
                         <img src="david.jpg" alt=" consultant David Kanat">
                     </div>
-                    <div class="consult-name-title">
+                    <div id="consult-name-title" class="blue-gradient">
                         <h2>David Kanat</h2>
                         <p>Chief of Design</p>
                     </div>
@@ -83,7 +83,7 @@
                     <h1>Project Preview</h1>
                 </div>
                 <div class="slideshow">
-                    <div class="slidecount">
+                    <div id="slidecount" class="blue-gradient">
                         <b>{{imageIndex + 1}} / {{projects.length}}</b>
                     </div>
                     <img id="slideImage" v-bind:src="'david-projekt-bilder/'+projects[imageIndex].bild" alt="Project image">
@@ -117,7 +117,7 @@
                     <p><b>Description: </b>{{project.beskrivning}}</p>
                 </div> -->
             </div>
-        </div>
+        </main>
     </div>
 </body>
 

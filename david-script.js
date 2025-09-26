@@ -1,4 +1,17 @@
 
+document.addEventListener('mousemove', (event) => {
+    const xPos = event.innerWidth
+    const yPos = event.innerheight
+
+    const xProcent = (event.clientX / xPos) * 100
+    const yProcent = (event.clientY / yPos) * 100
+
+    const moveX = 50 - (xProcent - 50) / 5
+    const moveY = 50 - (yProcent - 50) / 5
+
+    document.body.style.backgroundPosition = moveX + "% " + moveY + "%"
+})
+
 const app = Vue.createApp({
     data(){
         return{
