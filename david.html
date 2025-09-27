@@ -98,25 +98,29 @@
                 <div class="headline">
                     <h2>Projects</h2>
                 </div>
-                <div class="projekt-filter">
-                    <b>Filter projects by:</b>
-                    <select @change="chosenCategory" name="category-select">
-                        <option value="" disabled selected>Category</option>
-                        <option value="">All Categories</option>
-                        <option value="Byggnad">Building</option>
-                        <option value="Dekoration">Decoration</option>
-                        <option value="Möbler">Furniture</option>
-                    </select>
+                <div id="project-filter" class="blue-gradient">
+                    <div class="category">
+                        <b>Filter by: </b>
+                        <select @change="chosenCategory" name="category-select">
+                            <option value="" disabled selected>Category</option>
+                            <option value="">All Categories</option>
+                            <option value="Byggnad">Building</option>
+                            <option value="Dekoration">Decoration</option>
+                            <option value="Möbler">Furniture</option>
+                        </select>
+                    </div>
 
-                    <b>Sort projects by: </b>
-                    <select @change="sortingType" name="sort-select">
-                        <option value="" disabled selected>Sort</option>
-                        <option value="">None</option>
-                        <option value="a-ö">A-Ö</option>
-                        <option value="ö-a">Ö-A</option>
-                    </select>
-                    
+                    <div class="sort">
+                        <b>Sort by: </b>
+                        <select @change="sortingType" name="sort-select">
+                            <option value="" disabled selected>Sort</option>
+                            <option value="">None</option>
+                            <option value="a-ö">A-Ö</option>
+                            <option value="ö-a">Ö-A</option>
+                        </select>
+                    </div>
                 </div>
+
                 <div v-for="project in filteredArray" class="project-info">
                     <div class="project-image">
                         <img v-bind:src="'david-projekt-bilder/'+project.bild" alt="Image for a project">

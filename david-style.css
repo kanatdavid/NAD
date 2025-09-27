@@ -219,6 +219,7 @@ p {
 }
 
 .slideshow button {
+    font-size: 1.2rem;
     padding: 0.6rem;
     width: 50%;
     color: #ebebeb;
@@ -238,6 +239,29 @@ p {
 
 #nextBtn {
     border-radius: 0 0 100rem 0;
+}
+
+#project-filter, select{
+    font-size: 1.2rem;
+}
+
+#project-filter{
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0 0 1rem 1rem;
+    text-align: center;
+}
+
+select{
+    padding: 0.3rem;
+    background-color: #6809538d;
+    color: #ebebeb;
+    border: 0.1rem solid #ebebeb;
+    border-radius: 0.5rem;
+}
+
+.category{
+    margin-bottom: 1rem;
 }
 
 .project-info {
@@ -324,8 +348,28 @@ p {
         order: 3;
     }
 
+    #slidecount {
+        padding: 0.25rem;
+    }
+
+    .slideshow button{
+        font-size: 0.9rem;
+    }
+
     .projects {
         flex: 2.5;
+    }
+
+    #project-filter, select{
+        font-size: 0.9rem;
+    }
+
+    .category, .sort{
+        display: inline;
+    }
+
+    .category{
+        margin: 0 1rem 0 0;
     }
 
     .project-info {
@@ -345,9 +389,5 @@ p {
     .project-text {
         flex: 1;
         margin-left: 1rem;
-    }
-
-    #slidecount {
-        padding: 0.25rem;
     }
 }
