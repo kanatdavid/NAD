@@ -94,11 +94,33 @@
 
 
             <div class="main-item projects">
+                <div class="headline">
+                    <h2>Projects</h2>
+                </div>
+                <div class="projekt-filter">
+
+                    <b>Sort projects by: </b>
+                    <select><!--Sort-->
+                        <option value="" disabled selected>Sort</option>
+                        <option value="a-ö">A to Ö</option>
+                        <option value="rating-H-L">Rating High-Low</option>
+                        <option value="rating-V-L">Rating Low-High</option>
+                    </select>
+
+                    <b>Filter projects by:s</b>
+                    <select>
+                        <option value="" disabled selected>Category</option>
+                        <option value="Building">Building</option>
+                        <option value="Decoration">Decoration</option>
+                        <option value="Furniture">Furniture</option>
+                    </select>
+                </div>
                 <div v-for="project in projects" class="project-info">
                     <div class="project-image">
                         <img v-bind:src="'david-projekt-bilder/'+project.bild" alt="Image for a project">
                     </div>
                     <div class="project-text">
+                        <h2>{{project.titel}}</h2>
                         <p><b>Status: </b>{{project.status}}</p>
                         <p><b>Customer: </b>{{project.kund}}</p>
                         <p><b>Comment: </b>{{project.kundkommentar}}</p>
