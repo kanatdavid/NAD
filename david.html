@@ -86,7 +86,8 @@
                     <div id="slidecount" class="blue-gradient">
                         <b>{{imageIndex + 1}} / {{projects.length}}</b>
                     </div>
-                    <img id="slideImage" v-bind:src="'david-projekt-bilder/'+projects[imageIndex].bild" alt="Project image">
+                    <img id="slideImage" v-bind:src="'david-projekt-bilder/'+projects[imageIndex].bild"
+                        alt="Project image">
                     <button id="backBtn" v-on:click="backImage">Back</button>
                     <button id="nextBtn" v-on:click="nextImage">Next</button>
                 </div>
@@ -94,7 +95,29 @@
 
 
             <div class="main-item projects">
-                <div v-for="project in projects" class="project-info">
+                <div class="headline">
+                    <h2>Projects</h2>
+                </div>
+                <div class="projekt-filter">
+                    <b>Filter projects by:</b>
+                    <select @change="chosenCategory" name="category-select">
+                        <option value="" disabled selected>Category</option>
+                        <option value="">All Categories</option>
+                        <option value="Byggnad">Building</option>
+                        <option value="Dekoration">Decoration</option>
+                        <option value="Möbler">Furniture</option>
+                    </select>
+
+                    <b>Sort projects by: </b>
+                    <select @change="sortingType" name="sort-select">
+                        <option value="" disabled selected>Sort</option>
+                        <option value="">None</option>
+                        <option value="a-ö">A-Ö</option>
+                        <option value="ö-a">Ö-A</option>
+                    </select>
+                    
+                </div>
+                <div v-for="project in filteredArray" class="project-info">
                     <div class="project-image">
                         <img v-bind:src="'david-projekt-bilder/'+project.bild" alt="Image for a project">
                     </div>
