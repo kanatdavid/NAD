@@ -1,13 +1,41 @@
 const app = Vue.createApp({
     data(){
         return{
-            projects: [{bild: ""}],//Den tomma
+            projects: [{bild: "", kategori: ""}],//Den tomma
             // egenskapen bild är bara en placeholder
             // då Vue kastar error eftersom att data()
             // sker före created() i Vues livscykel
             // och Vue försöker rendera bilden före
             // arrayen är fylld.
-            imageIndex: 0
+            imageIndex: 0,
+            categoryChoice: '',
+            sortingPick: ''
+        }
+    },
+    computed: {
+        filteredArray(){
+            // För varje objekt i arrayen jämförs varje objekts kategori
+            // mod this.categoryChoice, och om den kategorien
+            // finns i this.categoryChoice strängen returnerar includes
+            // true och det nuvarande array objektet returneras och
+            // hamnar i filteredArray, det är därför includes returnerar true
+            // på alla objekt när this.categoryChoice = '' alltså tom sträng
+            // för att alla strängar som inte är null innehåller tom sträng
+            const filteredArray = this.projects.filter((arrayObject) => 
+                arrayObject.kategori.includes(this.categoryChoice)
+            )
+
+            if(this.sortingPick.includes('a-ö')){
+                filteredArray.sort((objBefore, objAfter) =>
+                    objBefore.titel.localeCompare(objAfter.titel)
+                )
+            }else if(this.sortingPick.includes('ö-a')){
+                filteredArray.sort((objBefore, objAfter) =>
+                    objBefore.titel.localeCompare(objAfter.titel)
+                ).reverse()
+            }
+
+            return filteredArray
         }
     },
     created(){
@@ -15,7 +43,13 @@ const app = Vue.createApp({
             this.projects = response.data
         })
     },
-    methods: {
+    methods: {  
+        chosenCategory(event){
+            this.categoryChoice = event.target.value
+        },
+        sortingType(event){
+            this.sortingPick = event.target.value
+        },
         animateSlideshow(){
             //denna metod för att kunna trigga animationen fler än
             const slide = document.getElementById('slideImage')

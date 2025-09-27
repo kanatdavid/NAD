@@ -5,7 +5,7 @@
         "beskrivning": "En exakt replika av Mr & Mrs Steampunks älskade halv mekaniska bästa vän Rambo med dejoniserat koppar och kolimpregnerat titan skala 14:1. Allt detta på en pedestal av brun mediterriansk galaxy granit. Men det är inte bara en staty utan den ger vakthund en ny mening. Båda ögonen innehåller varsin HD kamera som är kopplade direkt till våran partner Securitas.",
         "status": "Åter öppnat",
         "kundkommentar": "Vi och Rambo är supernöjda! Vi vill att ögonen ska lysa dock.",
-        "feedback": ["Snabb", "Proffesionell", "Överträffade förväntningar"],
+        "kategori": "Dekoration",
         "bild": "punkDog.jpg"
     },
     {
@@ -14,7 +14,7 @@
         "beskrivning": "Sveriges huvud parlament, 1600 kvadrats röstsal, 24 konferensrum, 3 restauranger och stöd för övernattnning och fritidsgård för yngre barn komplett med utbildade dagisfröknar. För att underlätta för föräldrarna bland parlament medlemmarna. Och allt detta pyntat i kunglig stil med marmor med icke-bärande elfenbenspelar och detaljer målat färg innehållaned äkta guld",
         "status": "Avslutat",
         "kundkommentar": "Den svenska demokratin tackar er.",
-        "feedback": ["Enastående", "Makalöst", "Kvalitativt arbete"],
+        "kategori": "Byggnad",
         "bild": "Parlament.jpg"
     },
     {
@@ -23,7 +23,7 @@
         "beskrivning": "En tron av gigantiska proportioner, med diverse zoo, akvarium, plantager och äkta livs levande natur med 4 olika självförsaörjande biomtyper. Det finns savann biomer, arktiskta biomer, äkenbiomer och statsbiomer. Med 300 olika djurarter, från hund och katt till haj och häst samt friskt spridda hotell för största valmöjlighet. Har vart den mest populära semester plats sen 2021.",
         "status": "Avslutat",
         "kundkommentar": "Tack så mycket, jag önskar bara att jag inte blev del av den när jag satt på den.",
-        "feedback": ["Bekvämt","Bra service","Inte anti-magisk"],
+        "kategori": "Möbler",
         "bild": "mother-earth.jpg"
     },
     {
@@ -32,7 +32,7 @@
         "beskrivning": "Lyxigt 5 stjärnigt hotell, lokaliserat mellan två berg på moder jords högra trons ben. Med stor spa anläggning för par, vattenland för barnen och restauranger för livsnjutaren, helikopterturer runt hotellets underbara omgivning för äventyrarna samt en romantisk vandrings retrett upp för south mountain i vilket Mr & Mrs Gugu 3 stjärniga Michelin restaurang väntar..",
         "status": "Avslutat",
         "kundkommentar": "Alltså den är ju trevlig och så men den är högljudd.",
-        "feedback": ["Sjukt smidigt","Otroligt fint","Nöjda gäster"],
+        "kategori": "Byggnad",
         "bild": "mountain-hotel.jpg"
     },
     {
@@ -41,7 +41,7 @@
         "beskrivning": "3 våningars spa, på internationella ryndstationen, med avkopplande miljöer, restauranger och pooler. Inte bara jordbundna ska få slappna av utan våra astronauter behöver även andas ut då och då. Och det är alltid trevligt att påminnas lite om sin hemplanet, då den hemtrevliga futuriska designen ger en härlig hemkänsla med helt oslagbar utsikt och levande plantor.",
         "status": "Pågående",
         "kundkommentar": "Jag hörde inte förlåt vad sa du?",
-        "feedback": ["Dålig kommunikation","Bra design","Trevlig miljö"],
+        "kategori": "Byggnad",
         "bild": "space-spa.jpg"
     },
     {
@@ -50,7 +50,7 @@
         "beskrivning": "Gigantiskt slott karvat i is, med drömliknande atmosfär på planeten Blip Blop. Med kapacitet för 5000 gäster är detta 12 vånings slott enormt och visar planeten blip blops evolutionära historik då hotellet karvades ur ett isberg, på de flesta väggarna har perfekt bevarade fornhistoriska varelser som verkligen kittlar nyfikenheten.",
         "status": "Avslutat",
         "kundkommentar": "Blippity Bloppity Blooo.",
-        "feedback": ["Blipaa!!","Blopp blo blip","Blapp"],
+        "kategori": "Byggnad",
         "bild": "Blip-blop-hotel.jpg"
     },
     {
@@ -59,7 +59,7 @@
         "beskrivning": "Pool och jacuzzi, med högpresterande värmeregulator och rengöringssystem. byggt för att agera som en vanlig pool och för att kunna användas som cryoterapeutisk isvakshål i kombination med en jacuzzi vid sidan av för atleten som kräver maximal återhämtning. Kapabel till att få allt vatten att koka och frysa till is inom loppet på 5 minuter.",
         "status": "Pågående",
         "kundkommentar": "The jacuzzi isn't deep enough.",
-        "feedback": ["Great heatregulator","Beautiful design","Wont make a deeper jacuzzi"],
+        "kategori": "Möbler",
         "bild": "pool.jpg"
     },
     {
@@ -68,7 +68,7 @@
         "beskrivning": "Ett hus som bara är till för att titta på och inuti. Det finns el och därmed värme. Överallt inuti huset och på utsidan finns optiska illusioner att beundra. Husets yttre väggar är täckta av varlser som kan hittas i forntida isen på planeten blip blip, Huset ska vara del i open art och kommer aldrig att byggas fler utav.",
         "status": "Ej påbörjad",
         "kundkommentar": "Jätte trevligt bemötande, bra planeringsmöte.",
-        "feedback": ["trevliga","Bra idéer","Lite dyrt"],
+        "kategori": "Dekoration",
         "bild": "art-house.jpg"
     }
 
