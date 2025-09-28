@@ -11,6 +11,30 @@ body {
     background-image: linear-gradient(to right,#2b294d, #6862b6, #2b294d);
 }
 
+.pageLoad-anim{
+    animation: pageLoad-anim 3s forwards;
+}
+
+@keyframes pageLoad-anim {
+    0%{
+        transform: translate(-100%, -100%);
+        opacity: 0;
+        box-shadow: 0 0 0.8rem #ffd000;
+        border-radius: 100%;
+    }
+    50%{
+        transform: translate(5%, 5%);
+    }
+    75%{
+        transform: translateX(-5%);
+    }
+    100%{
+        border-radius: 1rem;
+        opacity: 100%;
+        box-shadow: 0 0 0.8rem #111;
+    }
+}
+
 header {
     padding: 1rem;
     /* background-color: #6862b6; */
@@ -114,10 +138,10 @@ p {
     display: block;
     width: 100%;
     height: auto;
+    border-radius: 1rem 1rem 0 0;
 }
 
 #consult-name-title {
-    /* background-color: #6862b6; */
     border-radius: 0 0 100rem 100rem;
     padding: 0.5rem 0;
     margin-bottom: 1rem;
@@ -191,7 +215,6 @@ p {
     width: 100%;
     padding: 1rem;
     text-align: center;
-    /* background-color: #6862b6; */
 }
 
 .slideshow {
@@ -338,11 +361,6 @@ select{
         border-radius: 0 0 1rem 1rem;
     }
 
-    .consultant-image,
-    .consultant-image img {
-        border-radius: 1rem 1rem 0 0;
-    }
-
     .slideshow-container {
         flex: 1;
         order: 3;
@@ -379,11 +397,6 @@ select{
 
     .project-image {
         flex: 1;
-    }
-
-    .project-image,
-    .project-image img {
-        border-radius: 1rem;
     }
 
     .project-text {

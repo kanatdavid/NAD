@@ -44,6 +44,9 @@ const app = Vue.createApp({
         })
     },
     methods: {  
+        pageLoad(event){
+            event.target.classList.add('pageLoad-anim')
+        },
         chosenCategory(event){
             this.categoryChoice = event.target.value
         },
