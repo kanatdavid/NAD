@@ -32,7 +32,7 @@
     </header>
 
     <div id="app">
-        <main>
+        <main id="main"><!--OM INTE MAIN ANIMERAS TA BORT ID-->
             <div class="main-item presentation"><!---->
 
 
@@ -50,8 +50,8 @@
                     </div>
                     <q> Jag håller i all design här på NAD. Mitt mål med mina designer är alltid skapa något som ger en
                         naturlig känsla, är bekvämt att titta på och befinna sig i men samtidigt gör kunden ivrig att
-                        visa nära och kära deras nya konstverks liknande hantverk.
-                     </q>
+                        visa nära och kära deras nya konstverks liknande hantverk. 
+                    </q>
                 </div>
 
 
@@ -100,7 +100,11 @@
                 <div class="headline">
                     <h2>Projects</h2>
                 </div>
+                
                 <div id="project-filter" class="blue-gradient">
+
+                    <input type="text" placeholder="Search by title" id="searchField">
+
                     <div class="category">
                         <b>Filter by: </b>
                         <select @change="chosenCategory" name="category-select">

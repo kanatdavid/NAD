@@ -35,6 +35,11 @@ body {
     }
 }
 
+.highlight-trans{
+    box-shadow: 0 0 1rem #ffd000;
+    transition: box-shadow 2s ease-in-out;
+}
+
 header {
     padding: 1rem;
     /* background-color: #6862b6; */
@@ -275,7 +280,18 @@ p {
     text-align: center;
 }
 
-select{
+input{
+    display: block;
+    justify-self: center;
+    font-size: inherit;
+    margin-bottom: 1rem;
+}
+
+input::placeholder{
+    color: #ebebeb;
+}
+
+select, input{
     padding: 0.3rem;
     background-color: #6809538d;
     color: #ebebeb;
@@ -380,6 +396,10 @@ select{
 
     #project-filter, select{
         font-size: 0.9rem;
+    }
+
+    input{
+        margin-bottom: 0.5rem;
     }
 
     .category, .sort{

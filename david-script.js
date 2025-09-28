@@ -1,7 +1,7 @@
 const app = Vue.createApp({
     data(){
         return{
-            projects: [{bild: "", kategori: ""}],//Den tomma
+            projects: [{}],
             // egenskapen bild är bara en placeholder
             // då Vue kastar error eftersom att data()
             // sker före created() i Vues livscykel
@@ -9,7 +9,8 @@ const app = Vue.createApp({
             // arrayen är fylld.
             imageIndex: 0,
             categoryChoice: '',
-            sortingPick: ''
+            sortingPick: '',
+            searchValue: ''
         }
     },
     computed: {
@@ -22,7 +23,7 @@ const app = Vue.createApp({
             // på alla objekt när this.categoryChoice = '' alltså tom sträng
             // för att alla strängar som inte är null innehåller tom sträng
             const filteredArray = this.projects.filter((arrayObject) => 
-                arrayObject.kategori.includes(this.categoryChoice)
+                arrayObject.kategori.includes(this.categoryChoice) && arrayObject.titel.toLowerCase().startsWith(this.searchValue)
             )
 
             if(this.sortingPick.includes('a-ö')){
@@ -37,6 +38,24 @@ const app = Vue.createApp({
 
             return filteredArray
         }
+    },
+    mounted(){
+        const searchField = document.getElementById('searchField')
+        searchField.addEventListener('input', (event) => {
+            this.searchValue = event.target.value.toLowerCase()
+        })
+
+        searchField.addEventListener('focus', (event) => {
+            event.target.classList.add('highlight-trans')
+        })
+
+        searchField.addEventListener('blur',(event) => {
+            event.target.classList.remove('highlight-trans')
+        })
+
+        //intressanta eventlisteners för vanilla javascript
+        // focus, wheel, keydown, blur, scroll 
+        
     },
     created(){
         axios.get('david-projects.json').then((response) => {
