@@ -54,7 +54,7 @@ const app = Vue.createApp({
         })
 
         //intressanta eventlisteners för vanilla javascript
-        // focus, wheel, keydown, blur, scroll
+        // focus, wheel, keydown, blur, scroll 
         
     },
     created(){
