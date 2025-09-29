@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,7 @@
     <title>NAD-Rostyslav Malanchuk</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="rostyk.css">
+    <script src="https://kit.fontawesome.com/e885e5dc40.js" crossorigin="anonymous"></script>
     <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"> </script>
     <script defer src="rostyk.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -42,7 +43,7 @@
             <p class="rubrik-item2">Chefsarkitekt - på Nordic Architect Design</p>
         </div>
 
-        <div class="omMIg" id="omMig">
+        <div class="omMig" id="omMig">
             <div class="huvudBild"></div>
             <div class="minRoll">
                 <p>Som <strong>Chefsarkitekt</strong> på <em>Nordic Architect Design</em> leder jag det kreativa arbetet
@@ -108,18 +109,19 @@
         </div>
 
         <div id="proj" class="projektGalleri">
-            <h1 id="minaProjekt">Mina projekt</h1>
+            <div class="sortering">
+                <!-- lista med filtrerade projekt -->
+                <h1 id="minaProjekt">Mina projekt</h1>
 
-            <label class="labelText" for="filter">Sortera efter:</label>
-            <select class="labelText" v-model="filter" id="filter">
-                <option value="">Visa alla projekt</option>
-                <option value="skola">Visa läromiljöer</option>
-                <option value="bostäder">Visa bostäder</option>
-                <option value="kontor">Visa kontor</option>
-                <option value="trädgård">Visa trädgård</option>
-            </select>
-
-            <!-- lista med filtrerade projekt -->
+                <label class="labelText" for="filter">Sortera efter:</label>
+                <select class="labelText" v-model="filter" id="filter">
+                    <option value="">Visa alla projekt</option>
+                    <option value="skola">Visa läromiljöer</option>
+                    <option value="bostäder">Visa bostäder</option>
+                    <option value="kontor">Visa kontor</option>
+                    <option value="trädgård">Visa trädgård</option>
+                </select>
+            </div>
             <div v-for="projekt in filtreradeProjekt" class="ettProjekt">
                 <!-- <div v-for="bild in projekt.bilder" class="ettProjektBild">
                         <img v-bind:src='"rostyksBilder/"+bild' alt="förstaBild">
@@ -136,9 +138,24 @@
         </div>
 
     </main>
-    <footer>
-
-    </footer>
+    <div class="grid-item footer">
+        <div class="foot-uppgifter">
+            <h3> NAD - Nordic Architecture and Design</h3>
+            <p><b>Telefon: </b>+46 70-812 34 56</p>
+            <p><b>Email: </b><a href="mailto:nordicarchitectdesign@nad.com">nordicarchitectdesign@nad.com</a></p>
+            <p><b>Adress: </b><a href="https://maps.app.goo.gl/VQrfW8VuTFQPxR6m7" target="_blank">Yrvädersgatan 3, 70228 Örebro</a></p>
+        </div>
+        <div class="socials">
+            <h4 id="rbr-h4">Hitta oss på sociala medier</h4>
+            <div class="soc-icons">
+                <a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+                <a href="https://se.pinterest.com/"><i class="fa fa-pinterest"></i></a>
+                <a href="https://www.youtube.com/"><i class="fa fa-youtube"></i></a>
+                <a href="https://se.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

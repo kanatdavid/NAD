@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
     <meta charset="UTF-8">
@@ -40,9 +40,9 @@
         <div id="proj" class="baraBilder">
             <p class="titel">{{valdProjekt.titel}}</p>
             <!-- v-if="villkor" om true kör koden, om false körs inte -->
-            <div v-if="valdProjekt" class="aktivBild">
+            <div v-if="valdProjekt" class="aktivBild ">
 
-                <div class="knappBakåt" @click="prevPic">
+                <div class="knappBakåt" v-on:click="prevPic">
                     <i class="fa-solid fa-arrow-left"></i>
                 </div>
 
@@ -52,11 +52,11 @@
 
                 <img v-bind:src="'rostyksBilder/' + activePic" class="storBild" alt="storBild">
             </div>
-            <div class="bildGalleri">
+            <div class="bildGalleri ">
                 <!-- key-unik identitet för element i loopen,
                  utan: risk för fel bild/text om listan ändras -->
-                <img v-for="(bild, index) in valdProjekt.bilder" :key="bild" :src="'rostyksBilder/' + bild" class="miniBild"
-                    @click="choosePic(index)" :alt="bild">
+                <img v-for="(bild, index) in valdProjekt.bilder" :key="bild" :src="'rostyksBilder/' + bild"
+                    class="miniBild" @click="choosePic(index)" :alt="bild">
                 <!-- @click lyssnar på händelse, då sätts activePic till
                  just den bilden man klickat -->
             </div>
@@ -69,32 +69,45 @@
                 <p class="rbr">Övrigt information:</p>
                 <p class="övrigt">{{valdProjekt.övrigt}}</p>
             </div>
-        
 
-        <div class="projektGalleri">
             <h1 id="minaProjekt">Relaterade Projekt</h1>
-            <div v-for="projekt in relateradeProjekt" class="ettProjekt">
-                <!-- <div v-for="bild in projekt.bilder" class="ettProjektBild">
+            <div class="relateradeProjekt">
+
+                <div v-for="projekt in relateradeProjekt" class="ettProjekt">
+                    <!-- <div v-for="bild in projekt.bilder" class="ettProjektBild">
                         <img v-bind:src='"rostyksBilder/"+bild' alt="förstaBild">
                     </div> -->
-                <div class="ettProjektBild" @click.prevent="väljProjekt(projekt.id)">
-                    <img v-bind:src='"rostyksBilder/"+projekt.huvudBild' class="projektBilder" alt="förstaBild">
+                    <div class="ettProjektBild" @click.prevent="väljProjekt(projekt.id)">
+                        <img v-bind:src='"rostyksBilder/"+projekt.huvudBild' class="projektBilder" alt="förstaBild">
+                    </div>
+                    <div class="ettProjektText">
+                        <p>{{projekt.titel}}</p>
+                        <p>{{projekt.kund}}</p>
+                    </div>
                 </div>
-                <div class="ettProjektText">
-                    <p>{{projekt.titel}}</p>
-                    <p>{{projekt.kund}}</p>
-                </div>
-            </div>
 
-        </div>
+            </div>
         </div>
 
     </main>
-
-
-
-
-
+    <div class="grid-item footer">
+        <div class="foot-uppgifter">
+            <h3> NAD - Nordic Architecture and Design</h3>
+            <p><b>Telefon: </b>+46 70-812 34 56</p>
+            <p><b>Email: </b><a href="mailto:nordicarchitectdesign@nad.com">nordicarchitectdesign@nad.com</a></p>
+            <p><b>Adress: </b><a href="https://maps.app.goo.gl/VQrfW8VuTFQPxR6m7" target="_blank">Yrvädersgatan 3, 70228 Örebro</a></p>
+        </div>
+        <div class="socials">
+            <h4 id="rbr-h4">Hitta oss på sociala medier</h4>
+            <div class="soc-icons">
+                <a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+                <a href="https://se.pinterest.com/"><i class="fa fa-pinterest"></i></a>
+                <a href="https://www.youtube.com/"><i class="fa fa-youtube"></i></a>
+                <a href="https://se.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
