@@ -1,0 +1,317 @@
+/* design för mindre skärmar */
+/* header och dess utseende följer med från startsidan, 
+men jag vill ändå ha egen liten navigation bar*/
+main{
+    max-width: 1920px;
+    margin: 0 auto;
+}
+.underHeader{
+    width: 22em;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.uH{
+    text-align: center;
+    gap: 1em;
+    text-decoration:underline;
+}
+.i1{
+    grid-column: 1;
+}
+.i2{
+    grid-column: 2;
+}
+.i3{
+    grid-column: 3;
+}
+.uH:hover{
+    text-decoration: underline;
+    background-color: #374f7b;
+}
+/* header slut */
+/* main */
+.rubrik{
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.huvudBild{
+    width: 22rem;
+    height: 22rem;
+    background-image: url(rostyk.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.minRoll{
+    width: 80%;
+    margin: 1em auto;
+    line-height: 1.5;
+}
+/* animerade skillbars */
+.kompetenser{
+    text-align: center;
+}
+.skillbar-backg{
+    background-color: darkgrey;
+    width: 80%;
+    margin: 0 10%;
+    border-radius: 5px;
+}
+.skillbar-fil{
+    background-color: #283959;
+    text-align: center;
+    border-radius: 5px;
+    animation-name: fill-bar;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+    /* both används för att behålla första statement under delay, och sista statement när animation är klar */
+}
+.fil1{
+   animation-delay: 0.2s; 
+   /* custom property */
+   --target-width: 85%;
+}
+.fil2{
+    animation-delay: 0.4s; 
+    --target-width: 95%;
+}
+.fil3{
+    animation-delay: 0.6s; 
+    --target-width: 79%;
+}
+.fil4{
+    animation-delay: 0.8s; 
+    --target-width: 60%;
+}
+/* med keyframes kan du ange hur en egenskap ska 
+ändras från början till slut */
+@keyframes fill-bar{
+    from{
+        width:0%;
+    }
+    to{
+        width: var(--target-width);/*animationen är färdig när den uppnåt target-width*/
+    }
+}
+/* mina projekt */
+.projektGalleri{
+    width:80%;
+    height:auto;
+    margin: 0 auto;
+    padding: 1em 0;
+    text-align: center;
+}
+.sortering{
+    margin-top: 5em;
+    text-align: center;
+}
+.labelText{
+    margin-bottom: 1em;
+    padding-right: 0.7em;
+}
+#filter{
+    background-color: #333;
+    color: white;
+}
+.ettProjekt{
+    width: 90%;
+    height: auto;
+    max-width: 22em;
+    margin: 1em auto;
+    padding: 1em 0;
+    border: 3px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    background-image: linear-gradient(to top, #212020, #333);
+}
+.ettProjektBild{
+    width: 95%;
+    height: auto;
+    margin: auto;
+}
+.ettProjektText{
+    width: 80%;
+    height: auto;
+    margin: auto;
+    color: white;
+}
+.projektBilder{
+    width:95%;
+    height:auto;
+}
+.projektBilder:hover{
+    width: 100%;
+    height: auto;
+}
+/* style för rostyksProjekt */
+.baraBilder{
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    align-items: center;
+}
+.aktivBild{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-items: flex-start;
+    position: relative;
+    margin-bottom: 1em;
+}
+.aktivBild img{
+    width: 98%;
+    height: auto;
+    border: 0.19em solid rgba(0, 0, 0, 0.5);
+}
+.bildGalleri{
+    width: 5em;
+    height: auto;
+    display: flex;
+    gap:0.5em;
+    
+}
+.bildGalleri img{
+    width:100%;
+    height: auto;
+    border: 1.5px solid rgba(0, 0, 0, 0.5);
+}
+.miniBild:hover{
+    background-color: rgba(241, 235, 235, 1);
+    cursor: pointer;
+}
+.alltext{
+    text-align: center;
+}
+.titel{
+    font-size: 2em;
+}
+.rbr{
+    font-weight: bold;
+}
+i{
+    color: white;
+    font-size: 2em;
+}
+.fa-arrow-left{
+    position: absolute;
+    left: 0px;
+    top:50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.fa-arrow-right{
+    position: absolute;
+    right: 0px;
+    top:50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.fa-solid:hover{
+    color:#333;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius:0.1em;
+}
+.relateradeProjekt{
+    width:100%;
+    height:auto;
+    margin: 0 auto;
+    padding: 1em 0;
+    text-align: center;
+}
+@media only screen and (min-width: 800px){
+    /* .omMig{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .huvudBild{
+        max-width: 100%;
+        grid-column: 1;
+    }
+    .minRoll{
+        grid-column: 2;
+        font-size: 1.2em;
+    } */
+    .omMig{
+        width: 100%;
+        padding:1em;
+        
+    }
+    .huvudBild{
+        float: left;
+        width: 33%;
+        margin: 0 1em 1em 0;
+    }
+    .minRoll{
+        text-align: justify;
+    }
+    .projektGalleri{
+        width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(22em, 1fr));
+        text-align: center;
+    }
+    .projektGalleri .sortering:first-child{
+        /* sträcker sig över alla kolumner */
+        grid-column: 1/-1;
+    }
+
+    .titel{
+        font-size: 3em;
+    }
+    .baraBilder{
+        width:90%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+        
+    }
+    .aktivBild{
+        width: 90%;
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .bildGalleri{
+        grid-column: 1;
+        grid-row: 3;
+    }
+    .allText{
+        grid-column: 2;
+        grid-row: 2 / span 2;
+        font-size: 1.2em;
+    }
+    .titel{
+        grid-column: 1 / span 2;
+        grid-row: 1;
+        text-align: center;
+    }
+    #minaProjekt{
+        margin-top: 3em;
+        grid-column: 1 / span 2;
+        grid-row: 4;
+        text-align: center;
+    }
+    .relateradeProjekt{
+        grid-column: 1 / span 2;
+        grid-row: 5;
+        width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(362px, 1fr));
+        text-align: center;
+    }
+    .ettProjekt{
+        max-width: 22em;
+    }
+}
