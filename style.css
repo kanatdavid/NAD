@@ -1,5 +1,4 @@
 body {
-    position: relative;
     margin: 0;
     background-color: #333;
     color: #ebebeb;
@@ -10,13 +9,9 @@ header {
     position: sticky;
     top: 0;
     padding: 1em;
-    height: auto;
-    background-color: #283959;
     background-image: linear-gradient(to bottom, #283959, #333);
     display: grid;
-    grid-template-rows: 6em;
     grid-template-columns: 85% 15%;
-    align-items: center;
     z-index: 1000;
 }
 
@@ -26,8 +21,8 @@ a {
 }
 
 #logo {
-    grid-row: 1;
-    grid-column: 1 / span 1;
+    /* grid-row: 1;
+    grid-column: 1 / span 1; */
     width: 10em;
     height: auto;
 }
@@ -35,8 +30,8 @@ a {
 #menu-icon {
     color: #ebebeb;
     font-size: 3em;
-    grid-row: 1;
-    grid-column: 2 / span 1;
+    /* grid-row: 1;
+    grid-column: 2 / span 1; */
     justify-self: start;
 }
 
@@ -73,15 +68,11 @@ a {
     background-color: #5a76af;
 }
 
-/* .grid-container-layout { finns ej
-    padding: 0.5em;
-} */
-
-.main {
+main {
     padding: 0 0.5em
 }
 
-.main img {
+main img {
     width: 100%;
     height: auto;
 }
@@ -107,32 +98,31 @@ a {
 .anställda {
     justify-content: center;
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     flex-wrap: wrap;
 }
 
-.anst-grid-it {
+.anst-flex-it {
     padding: 0.5em;
     line-break: anywhere;
     width: 44%;
     display: grid;
     justify-items: center;
     align-items: center;
-    background-color: #283959;
     background-image: radial-gradient(#283959, #394157, #333);
     border-radius: 2em 0 2em 0;
     margin: 0.1em;
     box-shadow: 0 0 0.9em #222;
 }
 
-.anst-grid-it:hover {
+.anst-flex-it:hover {
     background-image: radial-gradient(#283959, #454a59, #333);
 }
 
-.anst-grid:hover {
+/* .anst-flex:hover {
     transition: all 180ms ease-out;
     box-shadow: 0 0 0.9em #495F8C;
-}
+} */
 
 .anst-bild {
     border-radius: 50%;
@@ -142,14 +132,14 @@ a {
     margin-top: 0.5em;
 }
 
-.anst-namn:hover{
+.anst-namn:hover {
     text-decoration: underline;
 }
 
-.länk-anställd{
+/* .länk-anställd{
     margin: 0;
     padding: 0;
-}
+} */
 
 /*------------------------KONTAKT.HTML-----------------------------*/
 
@@ -177,7 +167,7 @@ button {
     margin: 0.5em;
 }
 
-.formulär input, 
+.formulär input,
 textarea {
     padding: 0.5em;
     transform: translateX(-0.5em);
@@ -187,7 +177,6 @@ textarea {
     border-radius: 1em;
     /*Fick ändra border: none för annars syns inte grön/röd ram */
     border: 0.2em solid #ccc;
-    /* box-sizing: border-box; */
 }
 
 .formulär textarea {
@@ -206,29 +195,29 @@ textarea {
     color: #ebebeb;
 }
 
-.formulär button:hover {
-    background-color: #5a76af;
-}
+/* .formulär button:hover {
+    background-color: #abb4c7;
+} */
 
 /* Validering */
 
 input:focus.valid {
-  border: 0.2em solid limegreen;
-  outline: none;
+    border: 0.2em solid limegreen;
+    outline: none;
 }
 
 input:focus.invalid {
-  border: 0.2em solid red;
-  outline: none;
+    border: 0.2em solid red;
+    outline: none;
 }
 
-#skickaKnapp:disabled{
+#skickaKnapp:disabled {
     background-color: #495F8C;
     cursor: not-allowed;
     opacity: 0.6;
 }
 
-#skickaKnapp:enabled{
+#skickaKnapp:enabled {
     background-color: #7aa4f8;
     cursor: pointer;
     opacity: 1;
@@ -241,9 +230,10 @@ input:focus.invalid {
     color: #ff0000;
     margin: 0.2em 0 0.5em 0.5em;
 }
+
 .hidden {
     display: none;
-    font-weight: 300;
+    /* font-weight: 300; */
 }
 
 /* <- Validering*/
@@ -262,12 +252,13 @@ input:focus.invalid {
     padding: 0 1em 0.8em 1em;
     margin-top: 2em;
     background-image: linear-gradient(to top, #283959, #333);
-    display: block;
+    /* display: block; */
 }
 
+/* 
 .foot-uppgifter {
     display: block;
-}
+} */
 
 .footer .fa {
     font-size: 1.5em;
@@ -276,7 +267,7 @@ input:focus.invalid {
 
 /* ------------------responsive design------------------ */
 @media only screen and (min-width: 800px) {
-    .main {
+    main {
         padding: 0 15%;
     }
 
@@ -284,13 +275,11 @@ input:focus.invalid {
         padding: 0em;
         display: block;
         text-align: center;
-        /* grid-template-columns: 1fr; HEADERN ÄR INGEN GRID LÄNGRE*/
     }
 
     #logo {
         width: 12em;
         margin: 1em 0;
-        /* grid-column: 1 / span 2; */
     }
 
     #menu-icon {
@@ -298,10 +287,9 @@ input:focus.invalid {
     }
 
     #menu-list {
-        margin: 1em 0;
+        /* margin: 1em 0; */
         display: block;
-        width: 100%;
-        /* grid-row: 2; */
+        /* width: 100%; */
         background-image: linear-gradient(to right, #333333e1, #28395971, #28395986, #333333e1);
     }
 
@@ -312,9 +300,10 @@ input:focus.invalid {
         border-radius: 0.5em;
     }
 
+
     #tecknat-hus-bild {
         width: 15%;
-        float: inline-end;
+        /* float: inline-end; */
     }
 
     #hållbarhet-bild {
@@ -322,15 +311,19 @@ input:focus.invalid {
         float: inline-end;
     }
 
+    .anst-flex-it {
+        width: 22%;
+    }
+
     .form-container {
-        width: 100%;
+        /* width: 100%; */
         display: flex;
-        flex-direction: row;
+        /* flex-direction: row; */
         flex-wrap: nowrap;
         align-items: center;
-        justify-items: center;
+        /* justify-items: center; */
         justify-content: space-between;
-    } 
+    }
 
     .form-item {
         width: 45%;
@@ -344,31 +337,28 @@ input:focus.invalid {
         display: block;
     }
 
-    .footer{
+    .footer {
         padding: 0 15%;
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
 
-    .foot-uppgifter{
+    /* .foot-uppgifter{
         grid-column: 1;
     }
 
     .socials{
         grid-column: 2;
-    }
+    } */
 
-    .soc-icons{
+    .soc-icons {
         display: flex;
-        flex-direction: row;
+        /* flex-direction: row; */
     }
 
-    .socials a, #rbr-h4{
+    .socials a,
+    #rbr-h4 {
         display: block;
-    }
-
-    .anst-grid-it {
-        width: 22%;
     }
 
     .soc-rbr-container {
