@@ -66,20 +66,28 @@ main{
     background-color: #283959;
     text-align: center;
     border-radius: 5px;
-    animation: fill-bar 3s ease-out both;
+    animation-name: fill-bar;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
     /* both används för att behålla första statement under delay, och sista statement när animation är klar */
 }
 .fil1{
-   animation-delay: 0.2s; --target-width: 85%;
+   animation-delay: 0.2s; 
+   /* custom property */
+   --target-width: 85%;
 }
 .fil2{
-    animation-delay: 0.4s; --target-width: 95%;
+    animation-delay: 0.4s; 
+    --target-width: 95%;
 }
 .fil3{
-    animation-delay: 0.6s; --target-width: 79%;
+    animation-delay: 0.6s; 
+    --target-width: 79%;
 }
 .fil4{
-    animation-delay: 0.8s; --target-width: 60%;
+    animation-delay: 0.8s; 
+    --target-width: 60%;
 }
 /* med keyframes kan du ange hur en egenskap ska 
 ändras från början till slut */
