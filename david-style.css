@@ -1,0 +1,426 @@
+body {
+    margin: 0;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ebebeb;
+    height: 100%;
+    background-image: radial-gradient(#6862b6, #2b294d, #111);
+}
+
+.blue-gradient{
+    background-image: linear-gradient(to right,#2b294d, #6862b6, #2b294d);
+}
+
+.pageLoad-anim{
+    animation: pageLoad-anim 3s forwards;
+}
+
+@keyframes pageLoad-anim {
+    0%{
+        transform: translate(-100%, -100%);
+        opacity: 0;
+        box-shadow: 0 0 0.8rem #ffd000;
+        border-radius: 100%;
+    }
+    50%{
+        transform: translate(5%, 5%);
+    }
+    75%{
+        transform: translateX(-5%);
+    }
+    100%{
+        border-radius: 1rem;
+        opacity: 100%;
+        box-shadow: 0 0 0.8rem #111;
+    }
+}
+
+.highlight-trans{
+    box-shadow: 0 0 1rem #ffd000;
+    transition: box-shadow 2s ease-in-out;
+}
+
+header {
+    padding: 1rem;
+    /* background-color: #6862b6; */
+    position: sticky;
+    top: 0;
+    display: grid;
+    grid-template-columns: min-content auto;
+    align-items: center;
+    box-shadow: 0 0 0.8rem #111;
+    z-index: 1;
+}
+
+#logo {
+    width: 11rem;
+    height: auto;
+    grid-row: 1;
+    grid-column: 1 / span 1;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+#menu-icon {
+    font-size: 3rem;
+    grid-row: 1;
+    grid-column: 2 / span 1;
+    justify-self: end;
+}
+
+#menu {
+    margin: 1rem 0 0 0;
+    display: none;
+    grid-row: 2;
+    grid-column: 1 / span 2;
+    padding: 0;
+    font-size: 1.2rem;
+    list-style-type: none;
+    text-align: center;
+    box-shadow: 0 0 0.8rem #111;
+}
+
+#menu li {
+    background-color: #2a293e;
+    padding: 0.5rem;
+}
+
+#menu li:hover {
+    transition: all 180ms ease-in-out;
+    background-color: #504e75;
+}
+
+
+#menu a {
+    text-decoration: none;
+    color: #ebebeb;
+}
+
+#menu-toggle:checked~#menu {
+    display: block;
+}
+
+main {
+    margin: 1rem;
+}
+
+.main-item {
+    margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    text-align: center;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+.headline {
+    background-color: #00000051;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 100rem 100rem 0 0;
+}
+
+.consultant {
+    background-color: #2a293e;
+    font-size: 1.1rem;
+    padding: 1rem;
+}
+
+.consultant p {
+    text-align: center;
+}
+
+.consultant img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 1rem 1rem 0 0;
+}
+
+#consult-name-title {
+    border-radius: 0 0 100rem 100rem;
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+}
+
+#consult-name-title p {
+    margin: 0;
+}
+
+.skillbars {
+    box-sizing: border-box;
+    /*default är content-box, det
+    content box gör är att om man skriver width 200px
+    på en container, sedan 20px padding och 5px border så
+    blir totala bredden 225px. Med border-border box på samma
+    samma container med samma width, padding och border så
+    blir den totala bredden fortfarande 200px, inte 225px*/
+    font-size: 1.2rem;
+    padding: 1rem;
+    background-color: #6809538d;
+    width: 100%;
+    border-radius: 0 0 1rem 1rem;
+}
+
+.skillbars h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.skillbars b {
+    font-size: 1rem;
+}
+
+.bar {
+    margin: 0.15rem 0 1rem 0;
+    border-radius: 1rem;
+    text-align: center;
+    background-color: #222;
+    border: 0.2rem solid #00000051;
+}
+
+.skill {
+    border-radius: inherit;
+    background-color: #6862b6;
+    padding: 0.3rem;
+    animation-name: fillSkill;
+    animation-duration: 1.8s;
+    animation-fill-mode: forwards;/*för att elementet ska stanna på sin slutbredd*/
+}
+
+.enviroment {
+    --targetWidth: 79%; /*targetWidth är en variabel för att 
+    jag ska kunna använda de i end stage i animationen*/
+}
+
+.design {
+    --targetWidth: 92%
+}
+
+.useability {
+    --targetWidth: 80%
+}
+
+@keyframes fillSkill {
+    0%{width: 0;background-color: #ebebeb;}
+    100%{width: var(--targetWidth);}
+}
+
+#slidecount {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+}
+
+.slideshow {
+    width: 100%;
+}
+
+#slideImage {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.anim-changeSlide{
+    animation-name: changeSlide;
+    animation-duration: 0.1s;
+}
+
+@keyframes changeSlide {
+    0%{transform: rotate(0deg);}
+    20%{transform: rotate(9deg);}
+    40%{transform: rotate(-7deg);}
+    60%{transform: rotate(5deg);}
+    80%{transform: rotate(-3deg);}
+    100%{transform: rotate(0deg);}
+}
+
+.slideshow button {
+    font-size: 1.2rem;
+    padding: 0.6rem;
+    width: 50%;
+    color: #ebebeb;
+    background-color: #6809538d;
+    border: none;
+    border: 0.1rem solid #ebebeb
+}
+
+.slideshow button:hover {
+    transition: all 180ms ease-in-out;
+    background-color: #6862b6;
+}
+
+#backBtn {
+    border-radius: 0 0 0 100rem;
+}
+
+#nextBtn {
+    border-radius: 0 0 100rem 0;
+}
+
+#project-filter, select{
+    font-size: 1.2rem;
+}
+
+#project-filter{
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0 0 1rem 1rem;
+    text-align: center;
+}
+
+input{
+    display: block;
+    justify-self: center;
+    font-size: inherit;
+    margin-bottom: 1rem;
+}
+
+input::placeholder{
+    color: #ebebeb;
+}
+
+select, input{
+    padding: 0.3rem;
+    background-color: #6809538d;
+    color: #ebebeb;
+    border: 0.1rem solid #ebebeb;
+    border-radius: 0.5rem;
+}
+
+.category{
+    margin-bottom: 1rem;
+}
+
+.project-info {
+    background-color: #00000051;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+}
+
+.project-image {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    h1,
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    header {
+        display: block;
+        text-align: center;
+        margin-bottom: 2.5rem;
+        box-shadow: none;
+    }
+
+    #logo {
+        width: 13em;
+    }
+
+    #menu-icon {
+        display: none;
+    }
+
+    #menu {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translateY(100%);
+        /*Positiv är nedåt*/
+        /* background-color: #6809538d; */
+        background-image: linear-gradient(to right,#68095335, #680953, #68095335);
+        display: block;
+    }
+
+    #menu li {
+        display: inline;
+        border-radius: 0.5rem;
+    }
+
+    main {
+        margin: 0 6%;
+        display: flex;
+        flex-direction: row;
+        align-content: flex-start;
+    }
+
+    .presentation {
+        flex: 1;
+    }
+
+    #consult-name-title {
+        border-radius: 0 0 1rem 1rem;
+    }
+
+    .slideshow-container {
+        flex: 1;
+        order: 3;
+    }
+
+    #slidecount {
+        padding: 0.25rem;
+    }
+
+    .slideshow button{
+        font-size: 0.9rem;
+    }
+
+    .projects {
+        flex: 2.5;
+    }
+
+    #project-filter, select{
+        font-size: 0.9rem;
+    }
+
+    input{
+        margin-bottom: 0.5rem;
+    }
+
+    .category, .sort{
+        display: inline;
+    }
+
+    .category{
+        margin: 0 1rem 0 0;
+    }
+
+    .project-info {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .project-image {
+        flex: 1;
+    }
+
+    .project-text {
+        flex: 1;
+        margin-left: 1rem;
+    }
+}

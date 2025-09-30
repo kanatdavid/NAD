@@ -284,13 +284,13 @@ input:focus.invalid {
         padding: 0em;
         display: block;
         text-align: center;
-        grid-template-columns: 1fr;
+        /* grid-template-columns: 1fr; HEADERN ÄR INGEN GRID LÄNGRE*/
     }
 
     #logo {
         width: 12em;
         margin: 1em 0;
-        grid-column: 1 / span 2;
+        /* grid-column: 1 / span 2; */
     }
 
     #menu-icon {
@@ -301,7 +301,7 @@ input:focus.invalid {
         margin: 1em 0;
         display: block;
         width: 100%;
-        grid-row: 2;
+        /* grid-row: 2; */
         background-image: linear-gradient(to right, #333333e1, #28395971, #28395986, #333333e1);
     }
 
