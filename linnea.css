@@ -1,0 +1,394 @@
+h2 {
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 10px;
+}
+
+h5 {
+    font-size: 1.7em;
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.linnea img {
+    width: 30%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.linnea img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/*body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f9f9f9;
+  padding: 40px;
+  color: #333;
+}*/
+
+.skills-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 40px;
+    max-width: 1000px;
+    margin: auto;
+    flex-wrap: wrap;
+    /* gör den responsiv */
+}
+
+.skills-image img {
+    max-width: 300px;
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.skills-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skills-bars {
+    flex: 1;
+    min-width: 250px;
+}
+
+.skills-bars:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skillbar {
+    margin-bottom: 20px;
+}
+
+.skillbar h4 {
+    margin-bottom: 5px;
+}
+
+.bar-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 20px;
+    margin-bottom: 20px;
+}
+
+.bar {
+    height: 100%;
+    width: 0%;
+    background-color: rgb(100, 101, 101);
+    border-radius: 4px;
+    position: relative;
+    transition: width 3s ease-out;
+    color: white;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.percent-text {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    pointer-events: none;
+}
+
+.aboutLinnea p {
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 2em;
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+.slideshow-wrapper {
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    padding: 1px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.slideshow-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    position: relative;
+    width: 40%;
+    aspect-ratio: 4 / 3;
+    /* För att få till höjden av bilderna */
+    box-sizing: border-box;
+}
+
+.slideshow-container img {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s;
+    z-index: 1;
+}
+
+/* .slideshow-container img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+} */
+
+button.prev,
+button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    background-color: #283959;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    font-size: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.prev {
+    left: 0;
+}
+
+button.next {
+    right: 0;
+}
+
+button.prev:hover,
+button.next:hover {
+    background-color: #394f78;
+}
+
+/* Grundstil för bilden */
+#slideshow-image {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    position: relative;
+    z-index: 1;
+}
+
+/* Animationer för in och ut */
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100vw);
+        opacity: 0.5;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+@keyframes slideOutToRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(100vw);
+        opacity: 0;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100vw);
+        opacity: 0.5;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutToLeft {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(-100vw);
+        opacity: 0;
+    }
+}
+
+/* Klass för aktiv bild */
+.slideshow-container img.active {
+    position: absolute;
+    z-index: 2;
+    animation-fill-mode: forwards;
+}
+
+/* Klassen för in- och ut-animationer */
+.slide-in-left {
+    animation: slideInFromLeft 0.5s ease forwards;
+    box-shadow: 20px 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.slide-out-right {
+    animation: slideOutToRight 0.5s ease forwards;
+    box-shadow: -20px 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.slide-in-right {
+    animation: slideInFromRight 0.5s ease forwards;
+    box-shadow: -20px 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.slide-out-left {
+    animation: slideOutToLeft 0.5s ease forwards;
+    box-shadow: 20px 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.linnea a {
+    text-align: justify;
+    margin-top: 0.5em;
+    margin-bottom: 2em;
+}
+
+.projekt-lista {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1fr;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.filter-wrapper {
+    max-width: 1000px;
+    margin: 0 auto 20px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.filter-dropdown {
+    max-width: 900px;
+    width: 100%;
+    padding: 10px;
+    margin: 0 auto 0 auto;
+}
+
+.filter-dropdown select {
+    width: 25%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color:#555;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-position: right 10px center;
+    background-size: 16px 16px;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.filter-fritext {
+    max-width: 900px;
+    margin: 0 auto 20px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.filter-input {
+    width: 80%;
+    height: 28px;
+    font-size: 14px;
+    padding: 4px 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #555;
+}
+
+.projekt-lista input[type="text"]:focus {
+    border-color: #6c63ff;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(108, 99, 255, 0.3);
+}
+
+.projekt-card {
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    background-color: #283959;
+    background-image: radial-gradient(#283959, #394157, #333);
+    border-radius: 1em;
+    box-shadow: 0 0 0.9em #222;
+    padding: 1em;
+    margin-bottom: 1em;
+    color: white;
+    text-align: center;
+}
+
+.projekt-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5em;
+    box-shadow: 0 0 0.5em #333;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.projekt-card img:hover {
+    box-shadow: 0 0 1.2em #555;
+    transform: scale(1.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+@media only screen and (min-width: 800px) {
+    .projekt-lista {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .filter-dropdown select {
+        font-size: 14px;
+        padding: 8px;
+        margin: 0 20px 0 20px;
+    }
+
+    .slideshow-container {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    button.prev,
+    button.next {
+        font-size: 20px;
+        padding: 10px 14px;
+    }
+}
