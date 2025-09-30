@@ -1,0 +1,48 @@
+[
+    {
+        "projektnamn": "Moderna lägenheten",
+        "beskrivning": "En stilren och modern lägenhet med biljardbord och plats för många vänner",
+        "plats": "Stockholm",
+        "storlek": "150 kvm",
+        "image": "moderna_lagenheten.jpg"
+    },
+
+    {
+        "projektnamn": "Växthuset",
+        "beskrivning": "Ett modernt växthus för odling och umgänge året runt",
+        "plats": "Uppsala",
+        "storlek": "40 kvm",
+        "image": "vaxthuset.jpg"
+    },
+
+    {
+        "projektnamn": "Sjövillan",
+        "beskrivning": "En modern villa vid sjön med fantastisk utsikt",
+        "plats": "Nyköping",
+        "storlek": "250 kvm",
+        "image": "sjovillan.jpg"
+    },
+
+    {
+        "projektnamn": "Compactliving",
+        "beskrivning": "Ett litet och smart hus där allt är optimerat för funktionalitet",
+        "plats": "Göteborg",
+        "storlek": "50 kvm",
+        "image": "compactliving.jpg"
+    },
+
+    {
+        "projektnamn": "Vindslyan",
+        "beskrivning": "En mysig vindsvåning full med grönska och charm",
+        "plats": "Malmö",
+        "storlek": "75 kvm",
+        "image": "vindslyan.jpg"
+    },
+    {
+        "projektnamn": "Kanske ditt nya hem?",
+        "beskrivning": "En dröm som kan bli verklighet",
+        "plats": "Där gräset är som grönast",
+        "storlek": "Det är du som väljer",
+        "image": "slott.jpg"
+    }
+]

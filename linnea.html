@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inredningsdesign</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="linnea.css">
+    <script src="script.js" defer></script>
+    <script src="linnea.js" defer></script>
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"> </script>
+    <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer src="linneavue-app.js"></script>
+
+</head>
+
+<body>
+    <!--Header-->
+    <header>
+        <img id="logo" src="NAD_white_transparent.png" alt="NAD">
+        <input id="menu-toggle" type="checkbox">
+        <label for="menu-toggle" id="menu-icon">&#9776;</label>
+        <ul id="menu-list">
+            <li><a href="index.html">Startsida</a></li>
+            <li><a href="index.html#infoAboutCompany">Om NAD</a></li>
+            <li><a href="contact.html">Kontakta oss</a></li>
+        </ul>
+    </header>
+    <!--Header slut-->
+
+    <main class="layout">
+        <!--MAIN-->
+        <div class="main">
+            <div class="linnea">
+
+                <h2>Linnea - Förvandlar ett hus till ett hem ett rum i taget</h2>
+                <img src="linnea.jpg" alt="linnea">
+                <section class="skills-section">
+                    <div class="skills-image">
+                        <img src="linnea-projekt/kontor.jpg" alt="Skills">
+                    </div>
+                    <div class="skills-bars">
+                        <div class="skillbar" data-percent="90">
+                            <h4>Inredningskoncept</h4>
+                            <div class="bar-container">
+                                <div class="bar">
+                                    <span class="percent-text">90%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skillbar" data-percent="80">
+                            <h4>Rumsplanering</h4>
+                            <div class="bar-container">
+                                <div class="bar">
+                                    <span class="percent-text">80%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skillbar" data-percent="85">
+                            <h4>Färg- och materialval</h4>
+                            <div class="bar-container">
+                                <div class="bar">
+                                    <span class="percent-text">85%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skillbar" data-percent="100">
+                            <h4>Kundnöjdhet</h4>
+                            <div class="bar-container">
+                                <div class="bar">
+                                    <span class="percent-text">100%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <h2>Skapa rum som känns – inte bara syns</h2>
+        <div class="aboutLinnea">
+            <p>Att inreda handlar om mer än att välja färger och möbler. Det handlar om att förstå
+                hur ett rum används, hur
+                det får dig att känna – och hur det kan förvandlas till något både funktionellt och vackert.</p>
+
+            <p>Jag heter Linnea och arbetar som inredningsdesigner med fokus på att skapa miljöer som inspirerar,
+                förenklar
+                och lyfter din vardag. Oavsett om det gäller ett kontor, ett hem eller en offentlig miljö så skräddarsyr
+                jag
+                lösningar som speglar både platsens själ och dina behov.</p>
+
+            <p>Med känsla för detaljer, färg och rumsflöde hjälper jag dig att se potentialen i varje yta – och
+                förverkliga
+                den.</p>
+        </div>
+
+        <h2>Min process – från idé till verklighet</h2>
+
+        <div class="slideshow-wrapper">
+            <div class="slideshow-container">
+                <button class="prev">&#10094;</button>
+                <!-- <img id="slideshow-image" src="Bildspel/entre.jpg" alt="Entredörr"> -->
+                <button class="next">&#10095;</button>
+            </div>
+        </div>
+
+        <h2>Några av mina tidigare projekt</h2>
+        <!-- OBS: Den här sektionen använder Vue.js, vilket ger valideringsfel i W3C Validator men fungerar korrekt i webbläsaren -->
+        <div id="app">
+            <div class="filter-wrapper">
+                <div class="filter-dropdown">
+                    <select v-model="valdPlats">
+                        <option value="">Alla platser</option>
+                        <option v-for="plats in platser" :key="plats" :value="plats">{{ plats }}</option>
+                        <!-- Eller använd v-for om du vill generera automatiskt från datan -->
+                    </select>
+                    <select v-model="valdMinstaStorlek">
+                        <option value="">Minimum kvm</option>
+                        <option value="30">Min 30 kvm</option>
+                        <option value="50">Min 50 kvm</option>
+                        <option value="100">Min 100 kvm</option>
+                        <option value="150">Min 150 kvm</option>
+                    </select>
+                    <select v-model="valdStörstaStorlek">
+                        <option value="">Maximum kvm</option>
+                        <option value="200">Max 200 kvm</option>
+                        <option value="151">Max 151 kvm</option>
+                        <option value="101">Max 101 kvm</option>
+                        <option value="51">Max 51 kvm</option>
+                    </select>
+                </div>
+
+                <div class="filter-fritext">
+                    <input type="text" v-model="filterText"
+                        placeholder="Eller sök på text från projektnamn och innehåll..." class="filter-input" />
+                </div>
+
+            </div>
+
+            <div class="projekt-lista">
+                <div v-for="projekt in filteredProjekt" class="projekt-card">
+                    <h5>{{ projekt.projektnamn }}</h5>
+                    <img v-bind:src="'linnea-projekt/'+ projekt.image" alt="projektbild">
+                    <p><b>Beskrivning:</b> {{ projekt.beskrivning }}</p>
+                    <p><b>Plats:</b> {{ projekt.plats }}</p>
+                    <p><b>Storlek:</b> {{ projekt.storlek }}</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--FOOTER-->
+    <div class="grid-item footer">
+        <div class="foot-uppgifter">
+            <h3> NAD - Nordic Architecture and Design</h3>
+            <p><b>Telefon: </b>+46 70-812 34 56</p>
+            <p><b>Email: </b><a href="mailto:nordicarchitectdesign@nad.com">nordicarchitectdesign@nad.com</a></p>
+            <p><b>Adress: </b><a href="https://maps.app.goo.gl/VQrfW8VuTFQPxR6m7" target="_blank">Yrvädersgatan 3,
+                    70228
+                    Örebro</a>
+            </p><!-- target="_blank" öppnar google maps i en separat websida -->
+        </div>
+        <div class="socials">
+            <h4 id="rbr-h4">Hitta oss på sociala medier</h4>
+            <div class="soc-icons">
+                <a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+                <a href="https://se.pinterest.com/"><i class="fa fa-pinterest"></i></a>
+                <a href="https://www.youtube.com/"><i class="fa fa-youtube"></i></a>
+                <a href="https://se.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+            </div>
+        </div>
+        <!--/FOOTER-->
+
+
+</body>
+
+</html>
