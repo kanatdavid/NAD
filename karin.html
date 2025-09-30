@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="karin.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+    <script src="karin.js" defer></script>
+    <title>NAD</title>
+</head>
+
+<body>
+
+    <div id="top"></div>
+
+    <div class="header">
+        <header>
+            <img id="logo" src="NAD_white_transparent.png" alt="NAD">
+            <input id="menu-toggle" type="checkbox">
+            <label for="menu-toggle" id="menu-icon">&#9776;</label>
+            <ul id="menu-list">
+                <li><a href="#presentation">Om Mig</a></li>
+                <li><a href="#projekt">Mina Projekt</a></li>
+                <li><a href="#bildspel">Bilder</a></li>
+            </ul>
+        </header>
+    </div>
+
+    <div class="karin-content">
+        <div id="presentation">
+
+            <div class="rubrik">
+                <h1>Karin Sjöö landskapsarkitekt</h1>
+            </div>
+
+            <img src="karin.jpg" alt="Bild på Karin" class="profilbild">
+
+            <div class="text">
+                <p class="stortext">
+                    <em>“Arkitektur handlar inte bara om byggnader, utan om känslan av att höra hemma”</em>
+                </p>
+                <p>
+                    Jag är landskapsarkitekt och konsult på NAD med fokus på att skapa gröna miljöer där människor och
+                    natur kan mötas i harmoni.
+                    Min passion ligger i att forma trädgårdar och landskap som inte bara är vackra att se på, utan också
+                    hållbara och funktionella
+                    över tid.
+                </p>
+                <p>
+                    Jag tror att en välplanerad utemiljö kan förändra sättet vi lever våra liv på – den kan ge oss ro,
+                    inspiration och en känsla
+                    av gemenskap. Därför arbetar jag alltid med att förena estetik och funktion, där växtval,
+                    ljusförhållanden och årstidernas
+                    skiftningar får ta en central plats.
+                </p>
+                <p>
+                    I mina projekt ingår allt från privata villaträdgårdar och innergårdar till större parker och
+                    offentliga utemiljöer.
+                    Jag lägger stor vikt vid att lyssna på kundens behov, men också på platsens unika förutsättningar –
+                    markförhållanden,
+                    befintlig växtlighet och klimat – för att skapa hållbara lösningar som fungerar långsiktigt.
+                </p>
+                <p>
+                    Under de senaste åren har jag bland annat varit ansvarig för utvecklingen av en prisbelönt stadspark
+                    , omvandlingen av en historisk herrgårdsträdgård till en modern rekreationsplats samt utformningen
+                    av
+                    flera gröna innergårdar
+                    för bostadsrättsföreningar. Dessa projekt har lärt mig vikten av att förena tradition och
+                    nytänkande, samtidigt som varje detalj
+                    får bidra till helhetsupplevelsen.
+                </p>
+                <p>
+                    När jag inte arbetar samlar jag gärna inspiration genom att resa, fotografera natur och studera
+                    historiska trädgårdar.
+                    Jag älskar också att själv odla, experimentera med växter och skapa små gröna rum som växer och
+                    förändras över tid.
+                </p>
+            </div>
+        </div>
+
+        <div id="projekt">
+            <h2>Utvalda projekt</h2>
+            <div id="projekt-lista"></div>
+        </div>
+
+        <div id="bildspel">
+            <h2>Bilder</h2>
+            <div class="slides">
+                <button id="prev">❮</button>
+                <img id="slides-image" src="imgKarin/stadspark.jpg" alt="Bildspel">
+                <button id="next">❯</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="back-to-top">
+        <a href="#top" id="scrollTopBtn">Tillbaka till toppen</a>
+    </div>
+
+    <div class="footer">
+        <div class="foot-uppgifter">
+            <h3> NAD - Nordic Architecture and Design</h3>
+            <p><b>Telefon: </b>+46 70-812 34 56</p>
+            <p><b>Email: </b><a href="mailto:nordicarchitectdesign@nad.com">nordicarchitectdesign@nad.com</a>
+            </p>
+            <p><b>Adress: </b><a href="https://maps.app.goo.gl/VQrfW8VuTFQPxR6m7" target="_blank">Yrvädersgatan
+                    3, 70228
+                    Örebro</a>
+            </p>
+        </div>
+        <div class="socials">
+            <h4 id="rbr-h4">Hitta oss på sociala medier</h4>
+            <div class="soc-icons">
+                <a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+                <a href="https://se.pinterest.com/"><i class="fa fa-pinterest"></i></a>
+                <a href="https://www.youtube.com/"><i class="fa fa-youtube"></i></a>
+                <a href="https://se.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,199 @@
+body {
+    background-color: #f5f5f5;
+}
+
+.karin-content {
+    font-family: "Century Gothic", Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #2e2e2e;
+    background: #e8e4d9;
+    margin: 0;
+    text-align: left;
+}
+
+.karin-content h1 {
+    text-align: center;
+    background: #ddd6c9;
+    padding: 0.75rem;
+    font-size: 2.2rem;
+    color: #2e2e2e;
+    font-weight: 500;
+}
+
+.karin-content h2 {
+    font-size: 1.8rem;
+}
+
+.karin-content h2,
+.karin-content h3 {
+    color: #2e2e2e;
+    font-weight: 500;
+    display: inline-block;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.karin-content h2:hover,
+.karin-content h3:hover {
+    border-bottom-color: currentColor;
+    cursor: default;
+}
+
+#presentation {
+    display: grid;
+    gap: 1rem;
+    align-items: start;
+    margin: 2rem 0;
+}
+
+#presentation .profilbild {
+    width: 85%;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#presentation .text {
+    padding: 0 1rem;
+}
+
+.karin-content .stortext {
+    font-size: 1.3rem;
+}
+
+#projekt {
+    padding: 1rem;
+    margin-bottom: 2rem;
+    background: #f3f0ea;
+    border: 1px solid #b0b0b0;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+#projekt-lista img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem;
+    border-radius: 6px;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+}
+
+#projekt-lista img:hover {
+    transform: scale(1.02);
+}
+
+#bildspel {
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 40rem;
+}
+
+#bildspel .slides {
+    position: relative;
+    width: 100%;
+    max-width: 40rem;
+    height: 25rem;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#bildspel img {
+    width: 100%;
+    height: 23rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#bildspel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#prev {
+    left: 1rem;
+}
+
+#next {
+    right: 1rem;
+}
+
+#bildspel button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.header header,
+.footer {
+    background: #a8a29e;
+    color: #f5f5f5;
+}
+
+.back-to-top {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+#scrollTopBtn {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: #555;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: background 0.3s ease;
+}
+
+#scrollTopBtn:hover {
+    background: #2e2e2e;
+}
+
+@media only screen and (min-width: 800px) {
+
+    #projekt-lista img {
+        max-width: 40rem;
+        margin: 0 auto 1rem;
+    }
+
+    #presentation {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    #presentation .rubrik {
+        grid-row: 1;
+        grid-column: 1 / span 2;
+    }
+
+    #presentation .profilbild {
+        grid-row: 2;
+        grid-column: 1;
+    }
+
+    #presentation .text {
+        grid-row: 2;
+        grid-column: 2;
+    }
+
+    .karin-content h1 {
+        font-size: 2.4rem;
+    }
+
+    .karin-content h2 {
+        font-size: 2rem;
+    }
+}

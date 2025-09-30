@@ -1,0 +1,52 @@
+[
+    {
+        "title": "Herrgårdsträdgård",
+        "client": "Stiftelsen Svenska Herrgårdar",
+        "description": "Restaurering av en historisk herrgårdsträdgård med inslag av modern design för ökad tillgänglighet.",
+        "startYear": 2020,
+        "endYear": 2021,
+        "image": "imgkarin/herrgard.jpg",
+        "alt": "Historisk herrgårdsträdgård med gångar, planteringar och moderna inslag"
+    },
+
+    {
+        "title": "Gröna innergårdar",
+        "client": "Bostadsrättsföreningen Björkallén",
+        "description": "Gestaltning av tre innergårdar med planteringar, sittplatser och gemensamma ytor för sociala möten.",
+        "startYear": 2022,
+        "endYear":2023,
+        "image": "imgkarin/innergard.jpg",
+        "alt": "Gröna innergårdar med planteringar, sittplatser och gemensamma mötesytor"
+    },
+
+    {
+        "title": "Privata villaträdgårdar",
+        "client": "Flera uppdragsgivare",
+        "description": "Design av hållbara villaträdgårdar med perenna planteringar, vatteninslag och klimatanpassade lösningar.",
+        "startYear": 2023,
+        "endYear": 2024,
+        "image": "imgkarin/villatradgard.jpg",
+        "alt": "Grön villaträdgård med perenner, vatteninslag och klimatanpassade lösningar"
+
+    },
+
+    {
+        "title": "Rekreationspark vid Svartån",
+        "client": "Region Örebro Län",
+        "description": "En strandnära park med gång- och cykelvägar, belysning och varierad grönstruktur för rekreation.",
+        "startYear": 2024,
+        "endYear": 2025,
+        "image": "imgkarin/svartan.jpg",
+        "alt": "Strandnära rekreationspark vid Svartån med gång- och cykelvägar"
+    },
+
+        {
+        "title": "Stadsparken Örebro",
+        "client":"Örebro kommun",
+        "description": "Utveckling av en grön stadspark med lekplatser, rekreationsytor och planteringar.",
+        "startYear": 2024,
+        "endYear": 2025,
+        "image": "imgkarin/stadspark.jpg",
+        "alt": "Stadspark i Örebro med lekplatser, rekreationsytor och planteringar"
+    }
+]
