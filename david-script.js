@@ -1,7 +1,7 @@
 const app = Vue.createApp({
     data(){
         return{
-            projects: [{}],
+            projects: [{bild: "", kategori: "", titel: ""}],
             // egenskapen bild är bara en placeholder
             // då Vue kastar error eftersom att data()
             // sker före created() i Vues livscykel
