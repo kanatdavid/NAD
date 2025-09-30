@@ -60,7 +60,7 @@ let giltigEpost = false
 
 epostInput.addEventListener('input', (event) => {
     const epostInmatning = event.target.value
-    const regExMönster = /^[^@]+@[^@]+\.[^@]{2,}$/;
+    const regExMönster = /^[^@\s]+@[^@]+\.[^@]{2,}$/;
     giltigEpost = regExMönster.test(epostInmatning);
 
 
