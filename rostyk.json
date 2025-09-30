@@ -1,0 +1,167 @@
+[
+    {
+    "id": 1,
+    "titel": "Kunskapshuset Lumen",
+    "kund": "Götebors Stad",
+    "beskrivning": "Nytt gymnasium med fokus på modern pedagogik, flexibla klassrum och öppna samlingsytor.",
+    "roll": "Definerade skolans arkitektoniska koncept och säkerställde att lärmiljöerna stödde både grupparbete och enskilda studier.",
+    "övrigt": "Byggnaden fick LEED Gold-certifiering och innehåller gröna tak samt energisnåla fasader.",
+    "huvudBild": "lumen1.jpg",
+    "bilder": ["lumen1.jpg", "lumen2.tif.jpg", "lumen3.jpeg"],
+    "typ":"skola"
+    },
+        {
+    "id": 2,
+    "titel": "Förskolan Solkatten",
+    "kund": "Solna Kommun",
+    "beskrivning": "Färgglad och barnvänligt förskola med trygga utemiljöer och naturliga material.",
+    "roll": "Ledde designprocessen med fokus på barns perspektiv och säkerhet.",
+    "övrigt": "Trägården designades med pedagogiska lekområden, små odlingslådor och naturlek.",
+    "huvudBild": "solkatten1.webp",
+    "bilder": ["solkatten1.webp", "solkatten2.jpg"],
+    "typ":"skola"
+    },
+        {
+    "id": 3,
+    "titel": "Campus Nordica",
+    "kund": "Umeå Universitet",
+    "beskrivning": "Universitetsbyggnad för forskning och innovation inom teknik och miljö.",
+    "roll": "Utvecklade helhetsvisionen och integrerade forskningsmiljöer med öppna, publika ytor.",
+    "övrigt": "Innehåller labb, föreläsningssalar, makerspaces och ett atrium för samverkan.",
+    "huvudBild": "nordica1.jpg",
+    "bilder": ["nordica1.jpg", "nordica2.webp"],
+    "typ":"skola"
+    },
+        {
+    "id": 4,
+    "titel": "Kultur- och Kunskapscentrum Aurora",
+    "kund": "Norrköpings Kommun",
+    "beskrivning": "Skola kombinerad med bibliotek, teater och medborgarhus.",
+    "roll": "Ledde samarbetet mellan arkitekter, kulturförvaltning och skolledning.",
+    "övrigt": "Byggnaden har flexibla ytor som kan användas både för undervisning och kulturevenemang.",
+    "huvudBild": "aurora1.jpeg",
+    "bilder": ["aurora1.jpeg", "aurora2.jpg", "aurora3.jpg"],
+    "typ":"skola"
+    },
+        {
+    "id": 5,
+    "titel": "Bostadsområde Ängslyckan",
+    "kund": "Bostadsbolaget AB",
+    "beskrivning": "Ett grönt bostadskvarter med blandade boendeformer - radhus, lägenheter och seniorbostäder.",
+    "roll": "Ansvarade för den arkitektoniska helheten och utformningen av gemensamma ytor.",
+    "övrigt": "Fokus på social hållbarhet med gårdsträdgårdar, lekplatser och delade växthus.",
+    "huvudBild": "ängslyckan1.jpg",
+    "bilder": ["ängslyckan1.jpg", "ängslyckan2.jpg", "ängslyckan3.jpeg"],
+    "typ":"bostäder"
+    },
+        {
+    "id": 6,
+    "titel": "Havsglänthusen",
+    "kund": "Privat fastighetsutvecklare",
+    "beskrivning": "Tre exklusiva flerbostadshus med utsikt över havet.",
+    "roll": "Tog fram gestaltningsprogrammet och säkerställde hög standart i materialval.",
+    "övrigt": " Balkonger med glasräcken, fasader i natursten och smart energilösning med solpaneler.",
+    "huvudBild": "havsglänthusen1.jpeg",
+    "bilder": ["havsglänthusen1.jpeg", "havsglänthusen2.jpeg", "havsglänthusen3.jpeg", "havsglänthusen4.webp"],
+    "typ":"bostäder"
+    },
+        {
+    "id": 7,
+    "titel": "Trähusen i Lunden",
+    "kund": "Kommunalt bostadsbolag",
+    "beskrivning": "Miljöanpassade flerfamiljshus helt i trä med låg klimatpåverkan.",
+    "roll": "Ledde innovationsteamet och ansvarade för utformningen med fokus på klimatneutralitet.",
+    "övrigt": "Projektet blev pilot för framtida klimatsmarta bostäder i kommunen.",
+    "huvudBild": "trähus1.jpg",
+    "bilder": ["trähus1.jpg", "trähus2.avif"],
+    "typ":"bostäder"
+    },
+        {
+    "id": 8,
+    "titel": "Brf Stjärnbacken",
+    "kund": "Bostadsrättsförening",
+    "beskrivning": "Ett nytt kvarter i förorten med fokus på gemenskap och trygghet.",
+    "roll": "Formade kvarterets struktur och hade nära dialog med framtida boende.",
+    "övrigt": "innehåller innegårdar, gemensamhetslokal och delade cykelverkstäder.",
+    "huvudBild": "brf1.jpeg",
+    "bilder": ["brf1.jpeg", "brf2.jpg"],
+    "typ":"bostäder"
+    },
+        {
+    "id": 9,
+    "titel": "Innovation Tower",
+    "kund": "GlobalTech AB",
+    "beskrivning": "Ett högt kontorhus med smarta arbetsplatser och fokus på framtidens teknikföretag.",
+    "roll": "Utvecklade arkitekturkonceptet med flexibla planslösningar och energieffektiv fasad.",
+    "övrigt": "Byggnaden innehåller coworking-ytor, caféer och en takterrass.",
+    "huvudBild": "tower1.jpeg",
+    "bilder": ["tower1.jpeg", "tower2.webp", "tower3.jpg"],
+    "typ":"kontor"
+    },
+        {
+    "id": 10,
+    "titel": "Kreativa Kvarteret",
+    "kund": "Fastighetsbolaget Kreativa Rum",
+    "beskrivning": "Ombyggnad av industrilokaler till moderna kontorsytor för startups och kreativa företag.",
+    "roll": "Ledde arbetet med att kombinera historisk arkitektur med modern funktion.",
+    "övrigt": "Industrifasader bevarades och kompletterades med glas och trä.",
+    "huvudBild": "kvarteret1.jpg",
+    "bilder": ["kvarteret1.jpg", "kvarteret2.jpg"],
+    "typ":"kontor"
+    },
+        {
+    "id": 11,
+    "titel": "Nordic Finance Hub",
+    "kund": "Storbank",
+    "beskrivning": "Ett huvudkontor som ska signalera öppenhet, stabilitet och innvation.",
+    "roll": "Tog fram gestaltningsprogrammet och ansvarade för den arkitektoniska identiteten.",
+    "övrigt": "Interiören designades med transparens i fokus - öppan ytor, glasväggar och ljusinsläpp.",
+    "huvudBild": "nfh1.jpeg",
+    "bilder": ["nfh1.jpeg", "nfh2.jpg", "nfh3.jpg"],
+    "typ":"kontor"
+    },
+        {
+    "id": 12,
+    "titel": "Worklife Arena",
+    "kund": "CoWork Scandinavia",
+    "beskrivning": "Ett coworking-center för frilansare, småföretag och digitala nomader.",
+    "roll": "Ansvarade för att skapa en inspirerande och flexibel miljö.",
+    "övrigt": "Lokalen innehåller allt från tysta zoner till gemensamma loungeytor och poddrum.",
+    "huvudBild": "arena1.jpg",
+    "bilder": ["arena1.jpg", "arena2.jpeg"],
+    "typ":"kontor"
+    },
+        {
+    "id": 13,
+    "titel": "Botaniska Trägården Elysium",
+    "kund": "En universitetsstiftelse",
+    "beskrivning": "En ny botanisk trädgård för forskning, utbildning och rekreation.",
+    "roll": "Utvecklade planstrukturen och samarbetade med landskapsarkitekter och botaniker.",
+    "övrigt": "Växthus med klimatzoner, vattenspel och pedagogiska stigar.",
+    "huvudBild": "trädgård1.avif",
+    "bilder": ["trädgård1.avif", "trädgård2.jpg", "trädgård3.jpg"],
+    "typ":"trädgård"
+    },
+        {
+    "id": 14,
+    "titel": "Innerstadsoasen Flora",
+    "kund": "Stockholm Stad",
+    "beskrivning": "Förvandling av ett övergivet innerstadskvarte till en grön stadspark.",
+    "roll": "Ledde arbetet med att skapa balans mellan sociala ytor och biologisk mångfald.",
+    "övrigt": "Projektet inkluderade bikupor, regnträdgårdar och plats för stadtsodling.",
+    "huvudBild": "stadspark1.jpeg",
+    "bilder": ["stadspark1.jpeg", "stadspark2.jpg"],
+    "typ":"trädgård"
+    },
+        {
+    "id": 15,
+    "titel": "Trägården Harmonia",
+    "kund": "Privat uppdragsgivare",
+    "beskrivning": "En privat trädgård i japansk stil med vatten, sten och minimalistiska växtval.",
+    "roll": "Ansvarade för helhetskonceptet och integrerade huset och trädgården till en harmonisk helhet.",
+    "övrigt": "Innehåller koi-damm, bambu och stenlyktor.",
+    "huvudBild": "harmonia1.jpg",
+    "bilder": ["harmonia1.jpg", "harmonia2.jpg"],
+    "typ":"trädgård"
+    }
+]

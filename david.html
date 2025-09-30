@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script defer src="david-script.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>David Kanat</title>
+    <link rel="stylesheet" href="david-style.css">
+</head>
+
+<!--
+#B0A8BF - grå/blå
+#283959 - mörk blå
+#495F8C - blå
+#222611 - svart
+#F2C4B3 - besch
+-->
+
+<body>
+    <header class="blue-gradient">
+        <a href="index.html"><img id="logo" src="NAD_white_transparent.png" alt="NAD Logo"></a>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" id="menu-icon">&#9776;</label>
+        <ul id="menu">
+            <li><a href="index.html#infoAboutCompany">Om NAD</a></li>
+            <li><a href="index.html#infoOmAnställda">Om Oss</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </header>
+
+    <div id="app">
+        <main id="main"><!--OM INTE MAIN ANIMERAS TA BORT ID-->
+            <div class="main-item presentation"><!---->
+
+
+                <div class="headline">
+                    <h1>Consultant</h1>
+                </div>
+
+                <div class="consultant">
+                    <div class="consultant-image">
+                        <img src="david.jpg" alt=" consultant David Kanat">
+                    </div>
+                    <div id="consult-name-title" class="blue-gradient">
+                        <h2>David Kanat</h2>
+                        <p>Chief of Design</p>
+                    </div>
+                    <q> Jag håller i all design här på NAD. Mitt mål med mina designer är alltid skapa något som ger en
+                        naturlig känsla, är bekvämt att titta på och befinna sig i men samtidigt gör kunden ivrig att
+                        visa nära och kära deras nya konstverks liknande hantverk. 
+                    </q>
+                </div>
+
+
+                <div class="skillbars">
+                    <h3>Consultant ratings</h3>
+                    <b>Enviroment</b>
+                    <div class="bar">
+                        <div class="skill enviroment">
+                            7.9/10
+                        </div>
+                    </div>
+                    <b>Design</b>
+                    <div class="bar">
+                        <div class="skill design">
+                            9.2/10
+                        </div>
+                    </div>
+                    <b>Useability</b>
+                    <div class="bar">
+                        <div class="skill useability">
+                            8.0/10
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="main-item slideshow-container">
+
+                <div class="headline">
+                    <h1>Project Preview</h1>
+                </div>
+                <div class="slideshow">
+                    <div id="slidecount" class="blue-gradient">
+                        <b>{{imageIndex + 1}} / {{projects.length}}</b>
+                    </div>
+                    <img id="slideImage" v-bind:src="'david-projekt-bilder/'+projects[imageIndex].bild"
+                        alt="Project image">
+                    <button id="backBtn" v-on:click="backImage">Back</button>
+                    <button id="nextBtn" v-on:click="nextImage">Next</button>
+                </div>
+            </div><!---->
+
+
+            <div class="main-item projects">
+                <div class="headline">
+                    <h2>Projects</h2>
+                </div>
+                
+                <div id="project-filter" class="blue-gradient">
+
+                    <input type="text" placeholder="Search by title" id="searchField">
+
+                    <div class="category">
+                        <b>Filter by: </b>
+                        <select @change="chosenCategory" name="category-select">
+                            <option value="" disabled selected>Category</option>
+                            <option value="">All Categories</option>
+                            <option value="Byggnad">Building</option>
+                            <option value="Dekoration">Decoration</option>
+                            <option value="Möbler">Furniture</option>
+                        </select>
+                    </div>
+
+                    <div class="sort">
+                        <b>Sort by: </b>
+                        <select @change="sortingType" name="sort-select">
+                            <option value="" disabled selected>Sort</option>
+                            <option value="">None</option>
+                            <option value="a-ö">A-Ö</option>
+                            <option value="ö-a">Ö-A</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div v-for="project in filteredArray" class="project-info">
+                    <div class="project-image">
+                        <img @load="pageLoad" v-bind:src="'david-projekt-bilder/'+project.bild" alt="Image for a project">
+                    </div>
+                    <div class="project-text">
+                        <h2>{{project.titel}}</h2>
+                        <p><b>Status: </b>{{project.status}}</p>
+                        <p><b>Customer: </b>{{project.kund}}</p>
+                        <p><b>Comment: </b>{{project.kundkommentar}}</p>
+                        <p><b>Description: </b>{{project.beskrivning}}</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
