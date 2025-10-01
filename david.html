@@ -60,19 +60,19 @@
                     <b>Enviroment</b>
                     <div class="bar">
                         <div class="skill enviroment">
-                            7.9/10
+                            <b>7.9/10</b>
                         </div>
                     </div>
                     <b>Design</b>
                     <div class="bar">
                         <div class="skill design">
-                            9.2/10
+                            <b>9.2/10</b>
                         </div>
                     </div>
                     <b>Useability</b>
                     <div class="bar">
                         <div class="skill useability">
-                            8.0/10
+                            <b>8.0/10</b>
                         </div>
                     </div>
                 </div>
@@ -88,8 +88,7 @@
                     <div id="slidecount" class="blue-gradient">
                         <b>{{imageIndex + 1}} / {{projects.length}}</b>
                     </div>
-                    <img id="slideImage" v-bind:src="'david-projekt-bilder/'+projects[imageIndex].bild"
-                        alt="Project image">
+                    <img id="slideImage" v-bind:src="'david-projekt-bilder/'+projects[imageIndex].bild" alt="Project image">
                     <button id="backBtn" v-on:click="backImage">Back</button>
                     <button id="nextBtn" v-on:click="nextImage">Next</button>
                 </div>
