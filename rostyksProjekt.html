@@ -39,19 +39,22 @@
     <main>
         <div id="proj" class="baraBilder">
             <p class="titel">{{valdProjekt.titel}}</p>
+
             <!-- v-if="villkor" om true kör koden, om false körs inte -->
             <div v-if="valdProjekt" class="aktivBild ">
+                <div class="scroll-area">
+                    <div class="knappBakåt" v-on:click="prevPic">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
 
-                <div class="knappBakåt" v-on:click="prevPic">
-                    <i class="fa-solid fa-arrow-left"></i>
+                    <div class="knappFramåt" @click="nextPic">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                    <img id="bild" v-bind:src="'rostyksBilder/' + activePic" class="storBild" alt="storBild" @click="toggleScale">
                 </div>
-
-                <div class="knappFramåt" @click="nextPic">
-                    <i class="fa-solid fa-arrow-right"></i>
-                </div>
-
-                <img v-bind:src="'rostyksBilder/' + activePic" class="storBild" alt="storBild">
             </div>
+
             <div class="bildGalleri ">
                 <!-- key-unik identitet för element i loopen,
                  utan: risk för fel bild/text om listan ändras -->
@@ -95,7 +98,8 @@
             <h3> NAD - Nordic Architecture and Design</h3>
             <p><b>Telefon: </b>+46 70-812 34 56</p>
             <p><b>Email: </b><a href="mailto:nordicarchitectdesign@nad.com">nordicarchitectdesign@nad.com</a></p>
-            <p><b>Adress: </b><a href="https://maps.app.goo.gl/VQrfW8VuTFQPxR6m7" target="_blank">Yrvädersgatan 3, 70228 Örebro</a></p>
+            <p><b>Adress: </b><a href="https://maps.app.goo.gl/VQrfW8VuTFQPxR6m7" target="_blank">Yrvädersgatan 3, 70228
+                    Örebro</a></p>
         </div>
         <div class="socials">
             <h4 id="rbr-h4">Hitta oss på sociala medier</h4>
