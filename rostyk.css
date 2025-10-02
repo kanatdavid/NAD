@@ -181,7 +181,7 @@ main{
 }
 .aktivBild img.scaled{
     transform: scale(2);
-    z-index: 10;
+    z-index: 1;
 }
 .bildGalleri{
     width: 5em;
