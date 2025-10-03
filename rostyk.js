@@ -2,7 +2,7 @@ const proj = Vue.createApp({
     data(){
         return{
             minaProjekt:[],
-            valdProjekt: "", //det projekt som matchar id i url
+            valdProjekt: "", 
             activePic: null,
             filter: "",
             relateradeProjekt: [],
@@ -20,15 +20,12 @@ const proj = Vue.createApp({
         }
     },
     created(){
-        //params används för att läsa query-parametrar från url:en
         const parameter = new URLSearchParams(window.location.search);
-        //hämta id från url
         const annanProjId = parameter.get('id');
-        //hämta hela JSON-filen
+
         axios.get('rostyk.json').then((jsonResponse)=>{
             this.minaProjekt = jsonResponse.data;
-            //leta upp rätt projekt baserad på id
-            //find är en array metod, går genom listan och returnerar första träff
+
             this.valdProjekt = this.minaProjekt.find(projekt => projekt.id == annanProjId);
             if(this.valdProjekt){
                 this.activePic = this.valdProjekt.huvudBild
@@ -43,29 +40,27 @@ const proj = Vue.createApp({
     },
     methods:{
         väljProjekt(projektId){
-            //i webbläsarens fält sätter jag ett värde i form av id, då 
-            //öppnas rostyksProjekt.html och skickar med vilket projekt som ska visas
             window.location.href = "rostyksprojekt.html?id=" + projektId
         },
+
         nextPic(){
-            if(this.valdProjekt){//kontroll om valdproejkt finns/inte null
-                //ökar index med ett, samt kollar om den är på sista bilden, då sätts index till 0
+            if(this.valdProjekt){
                 this.currentPic = (this.currentPic + 1) % this.valdProjekt.bilder.length;
-                //uppdaterar activepic
                 this.activePic = this.valdProjekt.bilder[this.currentPic];
             }
         },
         prevPic(){
             if(this.valdProjekt){
-                //adderar lisans storlek för att undvika negativa tal
                 this.currentPic = (this.currentPic - 1 + this.valdProjekt.bilder.length) % this.valdProjekt.bilder.length;
                 this.activePic = this.valdProjekt.bilder[this.currentPic];
             }
         },
+
         choosePic(index){
             this.currentPic = index;
             this.activePic = this.valdProjekt.bilder[index];
         },
+
         toggleScale(){
             const image = document.getElementById('bild');
             if(image){
