@@ -7,12 +7,10 @@ const observer = new IntersectionObserver(entries => {
             const percent = parseInt(entry.target.getAttribute('data-percent'));
             bar.style.width = percent + '%';
             const span = bar.querySelector('.percent-text');
-            // Starta stapel-animation
             bar.style.width = percent + '%';
-            // Starta siffer-animation
             let current = 0;
-            const duration = 3000; // 3 sekunder
-            const steps = Math.floor(duration / 20); // hur många steg på 3 sek
+            const duration = 3000;
+            const steps = Math.floor(duration / 20);
             const increment = percent / steps;
 
             const counter = setInterval(() => {
@@ -26,11 +24,11 @@ const observer = new IntersectionObserver(entries => {
                 }
             }, 20);
 
-            observer.unobserve(entry.target); // Kör bara en gång per element
+            observer.unobserve(entry.target);
         }
     });
 }, {
-    threshold: 0.5 // 50% av elementet synligt innan det triggas
+    threshold: 0.5
 });
 
 skillbars.forEach(skillbar => observer.observe(skillbar));
@@ -64,33 +62,27 @@ let isAnimating = false;
 function changeSlide(direction) {
     if (isAnimating) return;
     isAnimating = true;
-    // direction = 1 (höger) eller -1 (vänster)
     const nextIndex = (currentIndex + direction + bilder.length) % bilder.length;
     const nextImg = document.createElement('img');
     nextImg.src = bilder[nextIndex];
     nextImg.classList.add('active');
 
-    // Lägg till nästa bild i containern
     slideshowContainer.appendChild(nextImg);
 
-    // Lägg på animationer beroende på riktning
     if (direction === 1) {
-        // Bild går ut till höger, nästa bild in från vänster
         currentImg.classList.add('slide-out-right');
         nextImg.classList.add('slide-in-left');
     } else {
-        // Bild går ut till vänster, nästa bild in från höger
         currentImg.classList.add('slide-out-left');
         nextImg.classList.add('slide-in-right');
     }
 
-    // Lägg till en fallback-timeout om animationend inte triggas
     const timeout = setTimeout(() => {
         finishSlide();
-    }, 1000); // 1 sekund, matcha med CSS-animationstid
+    }, 1000);
 
     function finishSlide() {
-        clearTimeout(timeout); // rensa timeout om animationen triggar
+        clearTimeout(timeout);
         slideshowContainer.removeChild(currentImg);
         currentImg = nextImg;
         currentIndex = nextIndex;
