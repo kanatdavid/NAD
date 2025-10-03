@@ -40,7 +40,6 @@
         <div id="proj" class="baraBilder">
             <p class="titel">{{valdProjekt.titel}}</p>
 
-            <!-- v-if="villkor" om true kör koden, om false körs inte -->
             <div v-if="valdProjekt" class="aktivBild ">
                 <div class="scroll-area">
                     <div class="knappBakåt" v-on:click="prevPic">
@@ -56,12 +55,14 @@
             </div>
 
             <div class="bildGalleri ">
-                <!-- key-unik identitet för element i loopen,
-                 utan: risk för fel bild/text om listan ändras -->
-                <img v-for="(bild, index) in valdProjekt.bilder" :key="bild" :src="'rostyksBilder/' + bild"
-                    class="miniBild" @click="choosePic(index)" :alt="bild">
-                <!-- @click lyssnar på händelse, då sätts activePic till
-                 just den bilden man klickat -->
+
+                <img v-for="(bild, index) in valdProjekt.bilder" 
+                    :key="bild" 
+                    :src="'rostyksBilder/' + bild"
+                    class="miniBild" 
+                    @click="choosePic(index)" 
+                    :alt="bild">
+
             </div>
             <div class="allText">
                 <p class="kund"><b>Kund: </b>{{valdProjekt.kund}}</p>
@@ -77,9 +78,7 @@
             <div class="relateradeProjekt">
 
                 <div v-for="projekt in relateradeProjekt" class="ettProjekt">
-                    <!-- <div v-for="bild in projekt.bilder" class="ettProjektBild">
-                        <img v-bind:src='"rostyksBilder/"+bild' alt="förstaBild">
-                    </div> -->
+                    
                     <div class="ettProjektBild" @click.prevent="väljProjekt(projekt.id)">
                         <img v-bind:src='"rostyksBilder/"+projekt.huvudBild' class="projektBilder" alt="förstaBild">
                     </div>
