@@ -68,9 +68,11 @@ main{
     border-radius: 5px;
     animation-name: fill-bar;
     animation-duration: 3s;
+    /*  börja snabbt, sluta sakta */
     animation-timing-function: ease-out;
     animation-fill-mode: both;
-    /* both används för att behålla första statement under delay, och sista statement när animation är klar */
+    /* both används för att behålla första statement 
+    under delay, och sista statement när animation är klar */
 }
 .fil1{
    animation-delay: 0.2s; 
@@ -212,9 +214,16 @@ i{
     font-size: 2em;
 }
 .fa-arrow-left{
+    /*element positioneras i förhållande till närmaste förälder 
+    elementet tas bort från flödet,
+     så det påverkar inte andra element */
     position: absolute;
+    /* flyttas till vänster */
     left: 0px;
+    /* flyttar 50% från toppen */
     top:50%;
+    /* elementets översta kant ligger exakt i mitten
+    för att centrera den flyttar vi upp elementets halva höjd */
     transform: translateY(-50%);
     cursor: pointer;
 }

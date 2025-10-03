@@ -21,9 +21,9 @@ const proj = Vue.createApp({
     },
     created(){
         //params används för att läsa query-parametrar från url:en
-        const params = new URLSearchParams(window.location.search);
+        const parameter = new URLSearchParams(window.location.search);
         //hämta id från url
-        const annanProjId = params.get('id');
+        const annanProjId = parameter.get('id');
         //hämta hela JSON-filen
         axios.get('rostyk.json').then((jsonResponse)=>{
             this.minaProjekt = jsonResponse.data;
