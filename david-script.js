@@ -1,5 +1,5 @@
 const app = Vue.createApp({
-    data(){
+    data(){// I data() defineras all reaktiv data
         return{
             projects: [{bild: "", kategori: "", titel: ""}],
             // egenskapen bild är bara en placeholder
@@ -13,7 +13,8 @@ const app = Vue.createApp({
             searchValue: ''
         }
     },
-    computed: {
+    computed: {// I computed properties returneras värden baserat på beräknad data()
+        // Computed properties är smart och körs bara när dess relaterade data ändras
         filteredArray(){
             // För varje objekt i arrayen jämförs varje objekts kategori
             // mod this.categoryChoice, och om den kategorien
@@ -36,10 +37,11 @@ const app = Vue.createApp({
                 ).reverse()
             }
 
-            return filteredArray
+           return filteredArray
         }
     },
-    mounted(){
+    mounted(){// Är en lifecycle hook och körs när appen har monterats i DOM(när html elementen är skapade och synliga på sidan)
+        // Vanligt att användas för, eventlisteners, hämta data från api, initiera tredjeparts bibiliotek
         const searchField = document.getElementById('searchField')
         searchField.addEventListener('input', (event) => {
             this.searchValue = event.target.value.toLowerCase()
@@ -57,12 +59,16 @@ const app = Vue.createApp({
         // focus, wheel, keydown, blur, scroll 
         
     },
-    created(){
+    created(){// är en lifecycle hook, körs eftr att komponenten har skapats men innan DOM har renderats
+        // Kan ej nå html element i created, för att DOM inte renderats än
+        // vanligt att användas för, initera data, hämta data, starta timers
         axios.get('david-projects.json').then((response) => {
             this.projects = response.data
         })
     },
-    methods: {  
+    methods: {  // methods används för att definera 
+        // funktioner/metoder för element
+        // körs varje gång man kallar på den
         pageLoad(event){
             event.target.classList.add('pageLoad-anim')
         },

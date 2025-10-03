@@ -18,12 +18,12 @@ namnInput.addEventListener('input', (event) => {
     if(giltigtNamn){
         namnInput.classList.add('valid')
         namnInput.classList.remove('invalid')
-        namnHint.classList.add('hidden')
+        //namnHint.classList.add('hidden')
         namnHint.textContent = ''
     } else{
         namnInput.classList.add('invalid')
         namnInput.classList.remove('valid')
-        namnHint.classList.remove('hidden')
+        //namnHint.classList.remove('hidden')
         namnHint.textContent = ': Endast text, 5-75 tecken'
     }
 
@@ -42,12 +42,12 @@ telefonInput.addEventListener('input', (event) => {
     if (giltigTelefon) {
         telefonInput.classList.add('valid')
         telefonInput.classList.remove('invalid')
-        telefonHint.classList.add('hidden')
+        //telefonHint.classList.add('hidden')
         telefonHint.textContent = ''
     } else{
          telefonInput.classList.add('invalid')
         telefonInput.classList.remove('valid')
-        telefonHint.classList.remove('hidden')
+        //telefonHint.classList.remove('hidden')
         telefonHint.textContent = ': 7-20 tecken, endast 0-9 samt "+" "-"'
     }
 
@@ -67,12 +67,12 @@ epostInput.addEventListener('input', (event) => {
     if (giltigEpost) {
         epostInput.classList.add('valid')
         epostInput.classList.remove('invalid')
-        epostHint.classList.add('hidden')
+        //epostHint.classList.add('hidden')
         epostHint.textContent = ''
     } else {
         epostInput.classList.add('invalid')
         epostInput.classList.remove('valid')
-        epostHint.classList.remove('hidden')
+        //epostHint.classList.remove('hidden')
         epostHint.textContent = 'Ex: abc@hotmail.com'
     }
 

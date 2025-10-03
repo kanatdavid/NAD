@@ -65,6 +65,12 @@ const proj = Vue.createApp({
         choosePic(index){
             this.currentPic = index;
             this.activePic = this.valdProjekt.bilder[index];
+        },
+        toggleScale(){
+            const image = document.getElementById('bild');
+            if(image){
+                image.classList.toggle('scaled');
+            }
         }
 
     }
