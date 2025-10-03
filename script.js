@@ -6,7 +6,6 @@ const uppdateraForm = () => {
     skickaKnapp.disabled = !(giltigtNamn && giltigTelefon && giltigEpost)
 }
 
-
 namnInput.addEventListener('input', (event) => {
     const namn = event.target.value
     
