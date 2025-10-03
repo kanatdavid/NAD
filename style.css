@@ -21,8 +21,6 @@ a {
 }
 
 #logo {
-    /* grid-row: 1;
-    grid-column: 1 / span 1; */
     width: 10em;
     height: auto;
 }
@@ -30,8 +28,6 @@ a {
 #menu-icon {
     color: #ebebeb;
     font-size: 3em;
-    /* grid-row: 1;
-    grid-column: 2 / span 1; */
     justify-self: start;
 }
 
@@ -98,7 +94,6 @@ main img {
 .anställda {
     justify-content: center;
     display: flex;
-    /* flex-direction: row; */
     flex-wrap: wrap;
 }
 
@@ -119,11 +114,6 @@ main img {
     background-image: radial-gradient(#283959, #454a59, #333);
 }
 
-/* .anst-flex:hover {
-    transition: all 180ms ease-out;
-    box-shadow: 0 0 0.9em #495F8C;
-} */
-
 .anst-bild {
     border-radius: 50%;
 }
@@ -136,12 +126,7 @@ main img {
     text-decoration: underline;
 }
 
-/* .länk-anställd{
-    margin: 0;
-    padding: 0;
-} */
 
-/*------------------------KONTAKT.HTML-----------------------------*/
 
 .formulär {
     width: 18em;
@@ -171,11 +156,7 @@ button {
 textarea {
     padding: 0.5em;
     transform: translateX(-0.5em);
-    /*För att med padding så blev elementet
-    1em större till höger, så det gick ej att centrera, så för att kompensera
-    så gjordes centrum av element till 0.5em till vänster av faktiska centrum*/
     border-radius: 1em;
-    /*Fick ändra border: none för annars syns inte grön/röd ram */
     border: 0.2em solid #ccc;
 }
 
@@ -194,12 +175,6 @@ textarea {
     background-color: #495F8C;
     color: #ebebeb;
 }
-
-/* .formulär button:hover {
-    background-color: #abb4c7;
-} */
-
-/* Validering */
 
 input:focus.valid {
     border: 0.2em solid limegreen;
@@ -233,10 +208,8 @@ input:focus.invalid {
 
 .hidden {
     display: none;
-    /* font-weight: 300; */
 }
 
-/* <- Validering*/
 #kont-rbr-stor-viewport {
     display: none;
 }
@@ -245,27 +218,20 @@ input:focus.invalid {
     display: block;
 }
 
-/*-------------------------FOOTER--------------------------*/
 
 .footer {
     line-height: 1.1em;
     padding: 0 1em 0.8em 1em;
     margin-top: 2em;
     background-image: linear-gradient(to top, #283959, #333);
-    /* display: block; */
 }
-
-/* 
-.foot-uppgifter {
-    display: block;
-} */
 
 .footer .fa {
     font-size: 1.5em;
     padding-right: 1em;
 }
 
-/* ------------------responsive design------------------ */
+
 @media only screen and (min-width: 800px) {
     main {
         padding: 0 15%;
@@ -287,9 +253,7 @@ input:focus.invalid {
     }
 
     #menu-list {
-        /* margin: 1em 0; */
         display: block;
-        /* width: 100%; */
         background-image: linear-gradient(to right, #333333e1, #28395971, #28395986, #333333e1);
     }
 
@@ -303,7 +267,6 @@ input:focus.invalid {
 
     #tecknat-hus-bild {
         width: 15%;
-        /* float: inline-end; */
     }
 
     #hållbarhet-bild {
@@ -316,12 +279,9 @@ input:focus.invalid {
     }
 
     .form-container {
-        /* width: 100%; */
         display: flex;
-        /* flex-direction: row; */
         flex-wrap: nowrap;
         align-items: center;
-        /* justify-items: center; */
         justify-content: space-between;
     }
 
@@ -343,17 +303,8 @@ input:focus.invalid {
         grid-template-columns: 1fr 1fr;
     }
 
-    /* .foot-uppgifter{
-        grid-column: 1;
-    }
-
-    .socials{
-        grid-column: 2;
-    } */
-
     .soc-icons {
         display: flex;
-        /* flex-direction: row; */
     }
 
     .socials a,
