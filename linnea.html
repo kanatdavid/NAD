@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inredningsdesign</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="linnea.css">
     <script src="script.js" defer></script>
     <script src="linnea.js" defer></script>
@@ -25,7 +24,7 @@
         <ul id="menu-list">
             <li><a href="index.html">Startsida</a></li>
             <li><a href="index.html#infoAboutCompany">Om NAD</a></li>
-            <li><a href="contact.html">Kontakta oss</a></li>
+            <li><a href="kontakt.html">Kontakta oss</a></li>
         </ul>
     </header>
     <!--Header slut-->
@@ -103,20 +102,18 @@
         <div class="slideshow-wrapper">
             <div class="slideshow-container">
                 <button class="prev">&#10094;</button>
-                <!-- <img id="slideshow-image" src="Bildspel/entre.jpg" alt="Entredörr"> -->
                 <button class="next">&#10095;</button>
             </div>
         </div>
 
         <h2>Några av mina tidigare projekt</h2>
-        <!-- OBS: Den här sektionen använder Vue.js, vilket ger valideringsfel i W3C Validator men fungerar korrekt i webbläsaren -->
+        <!-- OBS: Den här sektionen använder Vue.js -->
         <div id="app">
             <div class="filter-wrapper">
                 <div class="filter-dropdown">
                     <select v-model="valdPlats">
                         <option value="">Alla platser</option>
                         <option v-for="plats in platser" :key="plats" :value="plats">{{ plats }}</option>
-                        <!-- Eller använd v-for om du vill generera automatiskt från datan -->
                     </select>
                     <select v-model="valdMinstaStorlek">
                         <option value="">Minimum kvm</option>
@@ -139,6 +136,17 @@
                         placeholder="Eller sök på text från projektnamn och innehåll..." class="filter-input" />
                 </div>
 
+                <div class="sortering">
+                    <label>Sortera efter:</label>
+                    <button @click="setSort('projektnamn')">
+                        Namn <span v-if="sortKey === 'projektnamn'">{{ sortAsc ? '↑' : '↓' }}</span>
+                    </button>
+                    <button @click="setSort('plats')">
+                        Plats <span v-if="sortKey === 'plats'">{{ sortAsc ? '↑' : '↓' }}</span>
+                    </button>
+                    <button @click="rensaFilter" class="rensa-filter-knapp">Rensa filter</button>
+                </div>
+
             </div>
 
             <div class="projekt-lista">
@@ -152,7 +160,7 @@
             </div>
         </div>
     </main>
-    <!--FOOTER-->
+    <!--FOOTER (byt ut div mot footer för bättre semantik och tillgänglighet)-->
     <div class="grid-item footer">
         <div class="foot-uppgifter">
             <h3> NAD - Nordic Architecture and Design</h3>
@@ -173,7 +181,7 @@
                 <a href="https://se.linkedin.com/"><i class="fa fa-linkedin"></i></a>
             </div>
         </div>
-        <!--/FOOTER-->
+        <!--/FOOTER (byt ut div mot footer för bättre semantik och tillgänglighet)-->
 
 
 </body>

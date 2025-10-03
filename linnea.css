@@ -1,3 +1,87 @@
+body {
+    position: relative;
+    margin: 0;
+    background-color: #333;
+    color: #ebebeb;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    padding: 1em;
+    height: auto;
+    background-color: #283959;
+    background-image: linear-gradient(to bottom, #283959, #333);
+    display: grid;
+    grid-template-rows: 6em;
+    grid-template-columns: 85% 15%;
+    align-items: center;
+    z-index: 1000;
+}
+
+a {
+    color: #ebebeb;
+    text-decoration: none;
+}
+
+#logo {
+    grid-row: 1;
+    grid-column: 1 / span 1;
+    width: 10em;
+    height: auto;
+}
+
+#menu-icon {
+    color: #ebebeb;
+    font-size: 3em;
+    grid-row: 1;
+    grid-column: 2 / span 1;
+    justify-self: start;
+}
+
+#menu-icon:hover {
+    transition: all 180ms ease-out;
+    background-color: #374f7b;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+#menu-toggle:checked~#menu-list {
+    display: block;
+}
+
+#menu-list {
+    padding: 0;
+    text-align: center;
+    grid-row: 2;
+    grid-column: 1 / span 2;
+    display: none;
+    list-style-type: none;
+    font-size: 1.2em;
+    background-color: #5163aa;
+}
+
+#menu-list li {
+    padding: 0.4em;
+}
+
+#menu-list li:hover {
+    transition: all 180ms ease-out;
+    background-color: #5a76af;
+}
+
+.grid-container-layout {
+    padding: 0.5em;
+}
+
+.main {
+    padding: 0 0.5em
+}
+
+
 h2 {
     text-align: center;
     margin-top: 1em;
@@ -26,13 +110,6 @@ h5 {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/*body {
-  font-family: 'Open Sans', sans-serif;
-  background-color: #f9f9f9;
-  padding: 40px;
-  color: #333;
-}*/
-
 .skills-section {
     display: flex;
     align-items: flex-start;
@@ -41,7 +118,6 @@ h5 {
     max-width: 1000px;
     margin: auto;
     flex-wrap: wrap;
-    /* gör den responsiv */
 }
 
 .skills-image img {
@@ -133,7 +209,6 @@ h5 {
     position: relative;
     width: 40%;
     aspect-ratio: 4 / 3;
-    /* För att få till höjden av bilderna */
     box-sizing: border-box;
 }
 
@@ -150,12 +225,6 @@ h5 {
     transition: box-shadow 0.3s;
     z-index: 1;
 }
-
-/* .slideshow-container img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
-} */
 
 button.prev,
 button.next {
@@ -186,14 +255,12 @@ button.next:hover {
     background-color: #394f78;
 }
 
-/* Grundstil för bilden */
 #slideshow-image {
     transition: transform 0.5s ease, opacity 0.5s ease;
     position: relative;
     z-index: 1;
 }
 
-/* Animationer för in och ut */
 @keyframes slideInFromLeft {
     from {
         transform: translateX(-100vw);
@@ -205,7 +272,6 @@ button.next:hover {
         opacity: 1;
     }
 }
-
 
 @keyframes slideOutToRight {
     from {
@@ -243,14 +309,12 @@ button.next:hover {
     }
 }
 
-/* Klass för aktiv bild */
 .slideshow-container img.active {
     position: absolute;
     z-index: 2;
     animation-fill-mode: forwards;
 }
 
-/* Klassen för in- och ut-animationer */
 .slide-in-left {
     animation: slideInFromLeft 0.5s ease forwards;
     box-shadow: 20px 0 30px rgba(0, 0, 0, 0.3);
@@ -269,12 +333,6 @@ button.next:hover {
 .slide-out-left {
     animation: slideOutToLeft 0.5s ease forwards;
     box-shadow: 20px 0 30px rgba(0, 0, 0, 0.3);
-}
-
-.linnea a {
-    text-align: justify;
-    margin-top: 0.5em;
-    margin-bottom: 2em;
 }
 
 .projekt-lista {
@@ -300,21 +358,30 @@ button.next:hover {
     margin: 0 auto 0 auto;
 }
 
-.filter-dropdown select {
-    width: 25%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    background-color:#555;
-    appearance: none;
-    background-repeat: no-repeat;
-    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
-    background-position: right 10px center;
-    background-size: 16px 16px;
+.filter-dropdown select,
+.filter-input {
+    width: auto;
+    min-width: 180px;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    border: none;
+    border-radius: 0.5em;
+    background-color: #495F8C;
+    color: #ffffff;
     cursor: pointer;
     box-sizing: border-box;
     text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.filter-dropdown select:hover,
+.filter-input:hover {
+    background-color: #3b4f7a;
+}
+
+.filter-input {
+    width: 80%;
+    max-width: 400px;
 }
 
 .filter-fritext {
@@ -324,22 +391,50 @@ button.next:hover {
     text-align: center;
 }
 
-.filter-input {
-    width: 80%;
-    height: 28px;
-    font-size: 14px;
-    padding: 4px 8px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #555;
+.sortering {
+    justify-content: center;
+    margin-top: 2em;
+    display: flex;
+    gap: 0.7em;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
 }
 
-.projekt-lista input[type="text"]:focus {
-    border-color: #6c63ff;
-    background-color: #fff;
-    box-shadow: 0 0 5px rgba(108, 99, 255, 0.3);
+.sortering label {
+    font-weight: bold;
+    margin-right: 0.5em;
+    color: #ebebeb;
+}
+
+.sortering button,
+.rensa-filter-knapp {
+    background-color: #495F8C;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.5em;
+    padding: 0.4em 1em;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.rensa-filter-knapp {
+    margin: 2em;
+}
+
+.sortering button:hover,
+.rensa-filter-knapp:hover {
+    background-color: #3b4f7a;
+}
+
+.sortering button span {
+    margin-left: 0.4em;
+    font-weight: bold;
+}
+
+.rensa-filter-knapp:hover {
+    background-color: #3b4f7a;
 }
 
 .projekt-card {
@@ -370,7 +465,60 @@ button.next:hover {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.footer {
+    line-height: 1.1em;
+    padding: 0 1em 0.8em 1em;
+    margin-top: 2em;
+    background-image: linear-gradient(to top, #283959, #333);
+    display: block;
+}
+
+.foot-uppgifter {
+    display: block;
+}
+
+.footer .fa {
+    font-size: 1.5em;
+    padding-right: 1em;
+}
+
 @media only screen and (min-width: 800px) {
+    .main {
+        padding: 0 15%;
+    }
+
+    header {
+        padding: 0em;
+        display: block;
+        text-align: center;
+        grid-template-columns: 1fr;
+    }
+
+    #logo {
+        width: 12em;
+        margin: 1em 0;
+        grid-column: 1 / span 2;
+    }
+
+    #menu-icon {
+        display: none;
+    }
+
+    #menu-list {
+        margin: 1em 0;
+        display: block;
+        width: 100%;
+        grid-row: 2;
+        background-image: linear-gradient(to right, #333333e1, #28395971, #28395986, #333333e1);
+    }
+
+    #menu-list li {
+        display: inline;
+        margin: 0 0.5em;
+        background-color: #5163aa;
+        border-radius: 0.5em;
+    }
+
     .projekt-lista {
         grid-template-columns: 1fr 1fr;
     }
@@ -390,5 +538,37 @@ button.next:hover {
     button.next {
         font-size: 20px;
         padding: 10px 14px;
+    }
+
+    .footer {
+        padding: 0 15%;
+        display: grid;
+        grid-template-columns: 1fr, 1fr;
+    }
+
+    .foot-uppgifter {
+        grid-column: 1;
+    }
+
+    .socials {
+        grid-column: 2;
+    }
+
+    .soc-icons {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .socials a,
+    #rbr-h4 {
+        display: block;
+    }
+
+    .anst-grid-it {
+        width: 22%;
+    }
+
+    .soc-rbr-container {
+        text-align: center;
     }
 }

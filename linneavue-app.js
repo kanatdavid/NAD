@@ -6,7 +6,9 @@ const app = Vue.createApp({
       valdPlats: '',
       platser: [],
       valdMinstaStorlek: '',
-      valdStörstaStorlek: ''
+      valdStörstaStorlek: '',
+      sortKey: '',
+      sortAsc: true
     }
   },
 
@@ -14,7 +16,7 @@ const app = Vue.createApp({
     filteredProjekt() {
       const filter = this.filterText.toLowerCase();
 
-      return this.projekt.filter(p => {
+      let resultat = this.projekt.filter(p => {
         const matchText = !this.filterText ||
           p.projektnamn.toLowerCase().includes(filter) ||
           p.beskrivning.toLowerCase().includes(filter) ||
@@ -23,36 +25,61 @@ const app = Vue.createApp({
 
         const matchPlats = !this.valdPlats || p.plats === this.valdPlats;
 
-        const storlekTal = parseInt(p.storlek); // "150 kvm" ➜ 150
+        const storlekTal = parseInt(p.storlek);
         const matchMin = !this.valdMinstaStorlek || storlekTal >= parseInt(this.valdMinstaStorlek);
         const matchMax = !this.valdStörstaStorlek || storlekTal <= parseInt(this.valdStörstaStorlek);
 
         return matchText && matchPlats && matchMin && matchMax;
       });
+      if (this.sortKey) {
+        resultat.sort((a, b) => {
+          let va = a[this.sortKey];
+          let vb = b[this.sortKey];
+
+          va = va.toString().toLowerCase();
+          vb = vb.toString().toLowerCase();
+
+          if (va < vb) return this.sortAsc ? -1 : 1;
+          if (va > vb) return this.sortAsc ? 1 : -1;
+          return 0;
+
+        });
+      }
+      return resultat;
     }
-},
+  },
+
   created() {
-  axios.get('linnea.json')
-    .then(response => {
-      this.projekt = response.data;
-      this.platser = [...new Set(this.projekt.map(p => p.plats))];
-      this.storlek = [...new Set(this.projekt.map(p => p.storlek))];
-    })
-    .catch(error => {
-      console.error("Det gick inte att hämta data: ", error);
-    });
-},
+    axios.get('linnea.json')
+      .then(response => {
+        this.projekt = response.data;
+        this.platser = [...new Set(this.projekt.map(p => p.plats))];
+        this.storlek = [...new Set(this.projekt.map(p => p.storlek))];
+      })
+      .catch(error => {
+        console.error("Det gick inte att hämta data: ", error);
+      });
+  },
   methods: {
-  addProjekt() {
-    this.projekt.push({
-      projektnamn: "Nytt Projekt",
-      beskrivning: "Beskrivning av det nya projektet.",
-      plats: "Plats för det nya projektet",
-      storlek: "Storlek på det nya projektet",
-      image: "default.jpg"
-    });
+    setSort(key) {
+      if (this.sortKey === key) {
+        this.sortAsc = !this.sortAsc;
+      } else {
+        this.sortKey = key;
+        this.sortAsc = true;
+      }
+    },
+    rensaFilter() {
+      this.filterText = '';
+      this.valdPlats = '';
+      this.valdMinstaStorlek = '';
+      this.valdStörstaStorlek = '';
+      this.sortKey = '';
+      this.sortAsc = true;
+    }
   }
-}
+
 });
+
 
 app.mount("#app");

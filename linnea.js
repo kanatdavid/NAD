@@ -9,7 +9,6 @@ const observer = new IntersectionObserver(entries => {
             const span = bar.querySelector('.percent-text');
             // Starta stapel-animation
             bar.style.width = percent + '%';
-
             // Starta siffer-animation
             let current = 0;
             const duration = 3000; // 3 sekunder
@@ -35,7 +34,6 @@ const observer = new IntersectionObserver(entries => {
 });
 
 skillbars.forEach(skillbar => observer.observe(skillbar));
-// });
 
 const bilder = [
     'linnea-bildspel/entre.jpg',
@@ -53,6 +51,8 @@ const bilder = [
 
 let currentIndex = 0;
 const slideshowContainer = document.querySelector('.slideshow-container');
+document.querySelector('button.prev').addEventListener('click', () => changeSlide(-1));
+document.querySelector('button.next').addEventListener('click', () => changeSlide(1));
 
 let currentImg = document.createElement('img');
 currentImg.src = bilder[currentIndex];
@@ -89,7 +89,7 @@ function changeSlide(direction) {
         finishSlide();
     }, 1000); // 1 sekund, matcha med CSS-animationstid
 
-        function finishSlide() {
+    function finishSlide() {
         clearTimeout(timeout); // rensa timeout om animationen triggar
         slideshowContainer.removeChild(currentImg);
         currentImg = nextImg;
@@ -97,18 +97,6 @@ function changeSlide(direction) {
         isAnimating = false;
     }
 
-        currentImg.addEventListener('animationend', finishSlide, { once: true });
+    currentImg.addEventListener('animationend', finishSlide, { once: true });
 }
-    // nextImg.classList.add('active');
 
-    // När animationerna är klara, ta bort gamla bilden
-    // currentImg.addEventListener('animationend', () => {
-    //     slideshowContainer.removeChild(currentImg);
-    //     currentImg = nextImg;
-    //     currentIndex = nextIndex;
-    //     isAnimating = false;
-    // }, { once: true });
-
-
-document.querySelector('button.prev').addEventListener('click', () => changeSlide(-1));
-document.querySelector('button.next').addEventListener('click', () => changeSlide(1));
