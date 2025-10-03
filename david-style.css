@@ -3,7 +3,6 @@ body {
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
     color: #ebebeb;
-    /* height: 100%; */
     background-image: radial-gradient(#6862b6, #2b294d, #111);
 }
 
@@ -42,7 +41,6 @@ body {
 
 header {
     padding: 1rem;
-    /* background-color: #6862b6; */
     position: sticky;
     top: 0;
     display: grid;
@@ -125,7 +123,6 @@ p {
 .headline {
     background-color: #00000051;
     padding: 1rem;
-    /* text-align: center; */
     border-radius: 100rem 100rem 0 0;
 }
 
@@ -153,27 +150,14 @@ p {
     margin-bottom: 1rem;
 }
 
-/* #consult-name-title p {
-    margin: 0;  la i .consultant p
-} */
-
 .skillbars {
-    /* box-sizing: border-box; */
-    /*default är content-box, det
-    content box gör är att om man skriver width 200px
-    på en container, sedan 20px padding och 5px border så
-    blir totala bredden 225px. Med border-border box på samma
-    samma container med samma width, padding och border så
-    blir den totala bredden fortfarande 200px, inte 225px*/
     font-size: 1.2rem;
     padding: 1rem;
     background-color: #6809538d;
-    /* width: 100%; */
     border-radius: 0 0 1rem 1rem;
 }
 
 .skillbars h3 {
-    /* text-align: center; h3 har text-align: center från global selektor*/
     margin-bottom: 1rem;
 }
 
@@ -195,12 +179,11 @@ p {
     padding: 0.3rem;
     animation-name: fillSkill;
     animation-duration: 1.8s;
-    animation-fill-mode: forwards;/*för att elementet ska behålla end stage som styling*/
+    animation-fill-mode: forwards;
 }
 
 .enviroment {
-    --targetWidth: 79%; /*targetWidth är en variabel för att
-    jag ska kunna använda de i end stage i animationen*/
+    --targetWidth: 79%; 
 }
 
 .design {
@@ -217,16 +200,10 @@ p {
 }
 
 #slidecount {
-    /* box-sizing: border-box; */
-    /* width: 100%; */
     padding: 0.5rem;
     font-size: 1.2rem;
     text-align: center;
 }
-
-/* .slideshow {
-    width: 100%; behövdes inte
-} */
 
 #slideImage {
     width: 100%;
@@ -282,13 +259,12 @@ p {
 }
 
 input{
-    /* display: block; */
     justify-self: center;
     font-size: inherit;
     margin-bottom: 1rem;
 }
 
-input::placeholder{ /*Regler bara för placeholder i input*/
+input::placeholder{
     color: #ebebeb;
 }
 
@@ -353,8 +329,6 @@ select, input{
         bottom: 0;
         left: 0;
         transform: translateY(100%);
-        /*Positiv är nedåt*/
-        /* background-color: #6809538d; */
         background-image: linear-gradient(to right,#68095335, #680953, #68095335);
         display: block;
     }
@@ -367,28 +341,7 @@ select, input{
     main {
         margin: 0 6%;
         display: flex;
-        /* flex-direction: row; är standardvärde behövs ej */
-        /* align-content: flex-start; */
     }
-
-    /*
-    ...-content
-    justify-content, align-content
-    - Styr hela flex/grid containern
-    - Används när det finns mer utrymme runt 
-    den containern som flex/grid i.
-    EX: justify-content: center, centerar containern med flex/grid
-    
-    ...-items(items är direkta barn till containern med display: flex/grid, ett item i grid är en cell)
-    jusutify-items, align-items
-    - påverkar innehållet i varje cell, inte cellen sjäv
-    EX: align-items: center, alla items inehåll centreras vertikalt
-
-    ...-self
-    justify-self, align-self
-    - samma som ...-content men för ett specifikt item
-    EX: jsutify-self: center, centrerar det item med denna egenskap
-    */
 
     .presentation {
         flex: 1;
@@ -434,7 +387,6 @@ select, input{
 
     .project-info {
         display: flex;
-        /* flex-direction: row; */
     }
 
     .project-image {

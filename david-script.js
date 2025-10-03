@@ -1,28 +1,15 @@
 const app = Vue.createApp({
-    data(){// I data() defineras all reaktiv data
+    data(){
         return{
             projects: [{bild: "", kategori: "", titel: ""}],
-            // egenskapen bild är bara en placeholder
-            // då Vue kastar error eftersom att data()
-            // sker före created() i Vues livscykel
-            // och Vue försöker rendera bilden före
-            // arrayen är fylld.
             imageIndex: 0,
             categoryChoice: '',
             sortingPick: '',
             searchValue: ''
         }
     },
-    computed: {// I computed properties returneras värden baserat på beräknad data()
-        // Computed properties är smart och körs bara när dess relaterade data ändras
+    computed: {
         filteredArray(){
-            // För varje objekt i arrayen jämförs varje objekts kategori
-            // mod this.categoryChoice, och om den kategorien
-            // finns i this.categoryChoice strängen returnerar includes
-            // true och det nuvarande array objektet returneras och
-            // hamnar i filteredArray, det är därför includes returnerar true
-            // på alla objekt när this.categoryChoice = '' alltså tom sträng
-            // för att alla strängar som inte är null innehåller tom sträng
             const filteredArray = this.projects.filter((arrayObject) => 
                 arrayObject.kategori.includes(this.categoryChoice) && arrayObject.titel.toLowerCase().startsWith(this.searchValue)
             )
@@ -40,8 +27,7 @@ const app = Vue.createApp({
            return filteredArray
         }
     },
-    mounted(){// Är en lifecycle hook och körs när appen har monterats i DOM(när html elementen är skapade och synliga på sidan)
-        // Vanligt att användas för, eventlisteners, hämta data från api, initiera tredjeparts bibiliotek
+    mounted(){
         const searchField = document.getElementById('searchField')
         searchField.addEventListener('input', (event) => {
             this.searchValue = event.target.value.toLowerCase()
@@ -55,20 +41,13 @@ const app = Vue.createApp({
             event.target.classList.remove('highlight-trans')
         })
 
-        //intressanta eventlisteners för vanilla javascript
-        // focus, wheel, keydown, blur, scroll 
-        
     },
-    created(){// är en lifecycle hook, körs eftr att komponenten har skapats men innan DOM har renderats
-        // Kan ej nå html element i created, för att DOM inte renderats än
-        // vanligt att användas för, initera data, hämta data, starta timers
+    created(){
         axios.get('david-projects.json').then((response) => {
             this.projects = response.data
         })
     },
-    methods: {  // methods används för att definera 
-        // funktioner/metoder för element
-        // körs varje gång man kallar på den
+    methods: {
         pageLoad(event){
             event.target.classList.add('pageLoad-anim')
         },
@@ -79,13 +58,10 @@ const app = Vue.createApp({
             this.sortingPick = event.target.value
         },
         animateSlideshow(){
-            //denna metod för att kunna trigga animationen fler än
             const slide = document.getElementById('slideImage')
-            slide.classList.remove('anim-changeSlide')//ta bort classen från elementets classlist
-            void slide.offsetWidth //trigga reflow, tvinga webbläsaren läsa om layouten
-            // element.offsetWidth ger elementets bredd,
-            // men vi är inte intresserade av det därmed använder vi void
-            slide.classList.add('anim-changeSlide')//Lägg till classen i elementets klasslista igen
+            slide.classList.remove('anim-changeSlide')
+            void slide.offsetWidth
+            slide.classList.add('anim-changeSlide')
         },
         checkIndex(index){
             if(index < 0){
