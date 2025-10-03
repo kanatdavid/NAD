@@ -37,7 +37,7 @@ const app = Vue.createApp({
                 ).reverse()
             }
 
-            return filteredArray
+           return filteredArray
         }
     },
     mounted(){// Är en lifecycle hook och körs när appen har monterats i DOM(när html elementen är skapade och synliga på sidan)

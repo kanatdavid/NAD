@@ -158,7 +158,7 @@ p {
 } */
 
 .skillbars {
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     /*default är content-box, det
     content box gör är att om man skriver width 200px
     på en container, sedan 20px padding och 5px border så
